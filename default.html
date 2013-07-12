@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ReddFaction Ship Maker</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link type="text/css" href="content/styles/styles.css" />
+    <script type="text/javascript" src="content/scripts/DrawShips.js"></script>
+</head>
+<body>
+    <div id="InputFields">
+        <p>
+            Enter the number of Space Citizen Ships:
+        </p>
+        <dl>
+            <dt>M50</dt>
+            <dd><input type="number" id="M50ShipNumber" /></dd>
+            <dt>Aurora</dt>
+            <dd><input type="number" id="AuroraShipNumber" /></dd>
+            <dt>Avenger</dt>
+            <dd><input type="number" id="AvengerShipNumber" /></dd>
+            <dt>Hornet</dt>
+            <dd><input type="number" id="HornetShipNumber" /></dd>
+            <dt>300 Series</dt>
+            <dd><input type="number" id="s300SeriesShipNumber" /></dd>
+            <dt>Cutlass</dt>
+            <dd><input type="number" id="CutlassShipNumber" /></dd>
+            <dt>Gladiator</dt>
+            <dd><input type="number" id="GladiatorShipNumber" /></dd>
+            <dt>Freelancer</dt>
+            <dd><input type="number" id="FreelancerShipNumber" /></dd>
+            <dt>Retaliator</dt>
+            <dd><input type="number" id="RetaliatorShipNumber" /></dd>
+            <dt>Caterpillar</dt>
+            <dd><input type="number" id="CaterpillarShipNumber" /></dd>
+            <dt>Constellation</dt>
+            <dd><input type="number" id="ConstellationShipNumber" /></dd>
+            <dt>Starfarer</dt>
+            <dd><input type="number" id="StarfarerShipNumber" /></dd>
+            <dt>Idris</dt>
+            <dd><input type="number" id="IdrisShipNumber" /></dd>
+            <dt></dt>
+            <dd><input type="button" value="Draw my page!" onclick="DrawShips()" /></dd>
+        </dl>
+    </div>
+    <div id="Outputs">
+        <h2>Output</h2>
+        <div id="ShipOutput">
+        </div>
+    </div>
+</body>
+</html>
