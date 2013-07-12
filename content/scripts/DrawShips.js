@@ -14,16 +14,21 @@
             OutputShip(shipName, numberToDraw, shipClassName);
         }
     });
+
+    $("div#ShipOutput div.ShipBox").each(function () {
+        $(this).find(".ShipName").css("height", $(this).height() + "px");
+    });
 }
 function OutputShip(shipName, numberToDraw, shipClassName) {
     var htmlWriter = [];
     htmlWriter.push("<div class='ShipBox clear' id='" + shipClassName + "'>");
     htmlWriter.push("<div class='ShipName fLeft'>" + shipName + "</div>");
+    htmlWriter.push("<div class='ShipContainer'>");
     for (var i = 0; i < numberToDraw; i++) {
         htmlWriter.push("<div class='Ship fLeft " + shipClassName + "'></div>");
     }
+    htmlWriter.push("</div>");
     htmlWriter.push('<div class="clear"></div>');
     htmlWriter.push("</div>");
     $("div#ShipOutput").append(htmlWriter.join(''));
-    $("div#" + shipClassName + " .ShipName").css("height", $("div#" + shipClassName).height() + "px");
 }
