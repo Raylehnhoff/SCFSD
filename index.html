@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -10,7 +10,7 @@
         .ShipName{width:190px;font-family:Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;}
         .ShipBox{margin:15px 0;}
         .fLeft{float:left;}
-        .ShipContainer{display:inline-block;width:1200px;}
+        .ShipContainer{display:inline-block;}
         dt{float:left;width:150px;clear:left;}
         dd{float:left;}
         #InputFields{display:inline-block;}
@@ -100,7 +100,8 @@
             width:232px;
             background-position:0 -220px;
         }
-    
+    #holder { border: 10px dashed #ccc; width: 150px; height: 150px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #333; }
     </style>
     <script type="text/javascript" src="content/scripts/DrawShips.js"></script>
 </head>
@@ -109,7 +110,7 @@
         <p>
             Enter the number of Star Citizen Ships:
         </p>
-        <dl>
+        <dl id="ships">
             <dt>M50</dt>
             <dd><input type="number" id="M50ShipNumber" /></dd>
             <dt>Aurora</dt>
@@ -136,12 +137,28 @@
             <dd><input type="number" id="StarfarerShipNumber" /></dd>
             <dt>Idris</dt>
             <dd><input type="number" id="IdrisShipNumber" /></dd>
-            <dt></dt>
-            <dd><input type="button" value="Draw my page!" onclick="DrawShips()" /></dd>
         </dl>
+        <fieldset><legend>Optional Inputs</legend>
+        <dl>
+            <dt>Logo Position</dt>
+            <dd>
+                <select id="LogoPosition">
+                    <option value="Left">Left</option>
+                    <option value="Middle">Middle</option>
+                    <option value="Right">Right</option>
+                </select>
+            </dd>
+            <dt>Logo Width</dt>
+            <dd><input type="number" id="LogoWidth" /></dd>
+            <dt>Logo Height</dt>
+            <dd><input type="number" id="LogoHeight" /></dd>
+        </dl>
+        </fieldset>
+        <input type="button" value="Draw my page!" onclick="DrawShips()" />
     </div>
     <div id="Outputs">
         <h2>Output</h2>
+        <div id="holder"></div> 
         <div id="ShipOutput">
         </div>
     </div>
