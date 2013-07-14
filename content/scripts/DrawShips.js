@@ -15,11 +15,11 @@
         }
     });
 
+    //This will fix the width of the tool for users with small monitors
+    $(".ShipContainer").css("width", $(window).width() - 235 + "px");
     $("div#ShipOutput div.ShipBox").each(function () {
         $(this).find(".ShipName").css("height", $(this).height() + "px");
     });
-    //This will fix the width of the tool for users with small monitors
-    $(".ShipContainer").css("width", $(window).width() - 235+ "px");
 }
 function OutputShip(shipName, numberToDraw, shipClassName) {
     var htmlWriter = [];
