@@ -4,10 +4,11 @@
 <head>
     <title>Star Citizen Ship Maker</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Electrolize" media="all" rel="stylesheet">
     <style type="text/css">
         /****Page Markup*****/
         body{background-color:#D6D6D6;}
-        .ShipName{width:190px;font-family:Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;}
+        .ShipName{width:190px;font-family:'Electrolize', Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;}
         .ShipBox{margin:15px 0;}
         .fLeft{float:left;}
         .ShipContainer{display:inline-block;}
@@ -70,6 +71,12 @@
             width:48px;
             background-position:0 -76px;
         }
+        .Scythe
+        {
+            height:14px;
+            width:52px;
+            background-position:0 -313px;
+        }
         .Retaliator
         {
             height:14px;
@@ -127,6 +134,8 @@
             <dd><input type="number" id="GladiatorShipNumber" /></dd>
             <dt>Freelancer</dt>
             <dd><input type="number" id="FreelancerShipNumber" /></dd>
+            <dt>Scythe</dt>
+            <dd><input type="number" id="ScytheShipNumber" /></dd>
             <dt>Retaliator</dt>
             <dd><input type="number" id="RetaliatorShipNumber" /></dd>
             <dt>Caterpillar</dt>
@@ -143,6 +152,7 @@
             <dt>Logo Position</dt>
             <dd>
                 <select id="LogoPosition">
+                    <option value="None">None</option>
                     <option value="Left">Left</option>
                     <option value="Middle">Middle</option>
                     <option value="Right">Right</option>
