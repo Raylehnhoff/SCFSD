@@ -1,5 +1,8 @@
 ﻿function DrawShips() {
-    $("div#ShipOutput").html("");
+    //Clear the current output
+    $("table#ShipOutput tbody").html("");
+    
+    //Iterate over all of the ships, and output them
     $("dl#ships dd input[type=number]").each(function () {
         var shipInputBox = $(this);
         var shipName;
@@ -14,27 +17,39 @@
             OutputShip(shipName, numberToDraw, shipClassName);
         }
     });
-
-    //This will fix the width of the tool for users with small monitors
-    $(".ShipContainer").css("width", $(window).width() - 235 + "px");
-    $("div#ShipOutput div.ShipBox").each(function () {
-        $(this).find(".ShipName").css("height", $(this).height() + "px");
-    });
     HandleOptionalParams();
 }
 function OutputShip(shipName, numberToDraw, shipClassName) {
-    var htmlWriter = [];
-    htmlWriter.push("<div class='ShipBox clear' id='" + shipClassName + "'>");
-    htmlWriter.push("<div class='ShipName fLeft'>" + shipName + "</div>");
-    htmlWriter.push("<div class='ShipContainer'>");
-    for (var i = 0; i < numberToDraw; i++) {
-        htmlWriter.push("<div class='Ship fLeft " + shipClassName + "'></div>");
-    }
-    htmlWriter.push("</div>");
-    htmlWriter.push('<div class="clear"></div>');
-    htmlWriter.push("</div>");
-    $("div#ShipOutput").append(htmlWriter.join(''));
+        setTimeout(function () {
+        var $shipOutput = $("table#ShipOutput tbody");
+        $shipOutput.append("<tr class='ShipBox' id='" + shipClassName + "'>");
+        $shipOutput.append("<td class='ShipName'>" + shipName + "</td>");
+        $shipOutput.append("<td class='ShipContainer'>");
+        for (var i = 0; i < numberToDraw; i++) {
+            $shipOutput.append("<div class='Ship fLeft " + shipClassName + "'></div>");
+        }
+        $shipOutput.append("</td>");
+        $shipOutput.append("</tr>");
+    }, 2);
 }
+
+function CreateImage() {
+    setTimeout(function () {
+        html2canvas([$('#ShipOutput').get(0)], {
+            onrendered: function (canvas) {
+                var strData = "#";
+                if (!(canvas.height == 0 || canvas.width == 0)) {
+                    strData = canvas.toDataURL("image/png");
+                    strData.replace("image/png", "image/octet-stream");
+                    $("#DownloadImageLink").attr('href', strData);
+                    $("#DownloadImageLink").show();
+                }
+            },
+            background: "#D6D6D6"
+        });
+    }, 800);
+}
+
 function HandleOptionalParams() {
     var logoPos = $("select#LogoPosition").val();
     var logoWidth = $("input#LogoWidth").val();
@@ -45,30 +60,44 @@ function HandleOptionalParams() {
     }
     switch (logoPos) {
         case "Left":
-            $("#holder").show();
+            $("#logo").show();
             $("#holder").css("float", "left");
             $("#holder").css("margin", "0 0 0 155px");
             break;
         case "Right":
-            $("#holder").show();
+            $("#logo").show();
             $("#holder").css("float", "right");
             $("#holder").css("margin", "0 155px 0 0");
             break;
         case "Middle":
-            $("#holder").show();
+            $("#logo").show();
             $("#holder").css("float", "none");
             $("#holder").css("margin", "0 auto");
             break;
         case "None":
-            $("#holder").hide();
+            $("#logo").hide();
             break;
     }
+
+    var bCreateImg = $("#OutputImg").prop('checked');
+    //If they want to have an image, let's do that now.
+    if (bCreateImg) {
+        $("#DownloadImageLink").hide();
+        $("#DownloadImageLink").attr('href', '');
+        CreateImage();
+    }
+    else {
+        $("#DownloadImageLink").hide();
+    }
 }
-$(document).ready(function () {
+
+function BindEvents() {
+    //Bind the button to draw the ships
+    $('#btnDrawFaction').on('click', function () { DrawShips(); });
+    //Spinner(false);
+    //Bind the HTML Image Dropper (for the logo)
     var holder = document.getElementById('holder'),
     state = document.getElementById('status');
-
-
     holder.ondragover = function () { this.className = 'hover'; return false; };
     holder.ondragend = function () { this.className = ''; return false; };
     holder.ondrop = function (e) {
@@ -76,9 +105,8 @@ $(document).ready(function () {
         e.preventDefault();
 
         var file = e.dataTransfer.files[0],
-      reader = new FileReader();
+        reader = new FileReader();
         reader.onload = function (event) {
-            console.log(event.target);
             holder.style.background = 'url(' + event.target.result + ') no-repeat center';
             holder.style.border = 'none';
         };
@@ -86,4 +114,9 @@ $(document).ready(function () {
 
         return false;
     };
+}
+$(document).ready(function () {
+    BindEvents();
+    //Hide the download Image Link
+    $("#DownloadImageLink").hide();
 });

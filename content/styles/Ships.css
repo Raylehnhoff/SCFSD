@@ -1,0 +1,91 @@
+﻿.ShipName{width:190px;font-family:'Electrolize', Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;vertical-align:top;}
+.ShipBox{margin:15px 0;}
+.Ship
+{
+    background-image:url('../images/ships.png');
+    display:inline-block;
+}
+.M50
+{
+    height:10px;
+    width:21px;
+    background-position:0 0;
+}
+.Aurora
+{
+    height:14px;
+    width:30px;
+    background-position: 0 -6px;
+}
+.Avenger
+{
+    height:15px;
+    width:42px;
+    background-position:0 -19px;
+}
+.Hornet
+{
+    height:14px;
+    width:44px;
+    background-position:0 -37px;
+}
+.s300Series
+{
+    height:11px;
+    width:44px;
+    background-position:0 -272px;
+}
+.Cutlass
+{
+    height:13px;
+    width:44px;
+    background-position:0 -292px;
+}
+.Gladiator
+{
+    height:14px;
+    width:48px;
+    background-position:0 -53px;
+}
+.Freelancer
+{
+    height:14px;
+    width:48px;
+    background-position:0 -76px;
+}
+.Scythe
+{
+    height:14px;
+    width:52px;
+    background-position:0 -313px;
+}
+.Retaliator
+{
+    height:14px;
+    width:74px;
+    background-position:0 -99px;
+}
+.Caterpillar
+{
+    height:15px;
+    width:74px;
+    background-position:0 -120px;
+}
+.Constellation
+{
+    height:24px;
+    width:90px;
+    background-position:0 -139px;
+}
+.Starfarer
+{
+    height:38px;
+    width:170px;
+    background-position:0 -171px;
+}
+.Idris
+{
+    height:50px;
+    width:232px;
+    background-position:0 -220px;
+}
