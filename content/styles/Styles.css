@@ -1,0 +1,26 @@
+﻿body{background-color:#D6D6D6;}
+dt{float:left;width:150px;clear:left;}
+dd{float:left;}
+.clear{clear:both;}
+.fLeft{float:left;}
+#InputFields{display:inline-block;}
+#holder { border: 10px dashed #ccc; width: 150px; height: 150px; margin: 20px auto;}
+#holder.hover { border: 10px dashed #333; }
+#Spinner
+{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color:White;
+    opacity:0.8;
+    display:none;
+}
+#Spinner img
+{
+    opacity:1;
+    left:50%;
+    top:300px;
+    position:relative;
+}

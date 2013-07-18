@@ -1,118 +1,15 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
-    <title>Star Citizen Ship Maker</title>
+    <title>Star Citizen Faction Poster Maker</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Electrolize" media="all" rel="stylesheet">
-    <style type="text/css">
-        /****Page Markup*****/
-        body{background-color:#D6D6D6;}
-        .ShipName{width:190px;font-family:'Electrolize', Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;}
-        .ShipBox{margin:15px 0;}
-        .fLeft{float:left;}
-        .ShipContainer{display:inline-block;}
-        dt{float:left;width:150px;clear:left;}
-        dd{float:left;}
-        #InputFields{display:inline-block;}
-        #Outputs{margin-top:80px;}
-        .clear{clear:both;}
-        /****Ship Shit****/
-        .Ship
-        {
-            background-image:url(content/images/ships.png);
-            display:inline-block;
-        }
-        .M50
-        {
-            height:10px;
-            width:21px;
-            background-position:0 0;
-        }
-        .Aurora
-        {
-            height:14px;
-            width:30px;
-            background-position: 0 -6px;
-        }
-        .Avenger
-        {
-            height:15px;
-            width:42px;
-            background-position:0 -19px;
-        }
-        .Hornet
-        {
-            height:14px;
-            width:44px;
-            background-position:0 -37px;
-        }
-        .s300Series
-        {
-            height:11px;
-            width:44px;
-            background-position:0 -272px;
-        }
-        .Cutlass
-        {
-            height:13px;
-            width:44px;
-            background-position:0 -292px;
-        }
-        .Gladiator
-        {
-            height:14px;
-            width:48px;
-            background-position:0 -53px;
-        }
-        .Freelancer
-        {
-            height:14px;
-            width:48px;
-            background-position:0 -76px;
-        }
-        .Scythe
-        {
-            height:14px;
-            width:52px;
-            background-position:0 -313px;
-        }
-        .Retaliator
-        {
-            height:14px;
-            width:74px;
-            background-position:0 -99px;
-        }
-        .Caterpillar
-        {
-            height:15px;
-            width:74px;
-            background-position:0 -120px;
-        }
-        .Constellation
-        {
-            height:24px;
-            width:90px;
-            background-position:0 -139px;
-        }
-        .Starfarer
-        {
-            height:38px;
-            width:170px;
-            background-position:0 -171px;
-        }
-        .Idris
-        {
-            height:50px;
-            width:232px;
-            background-position:0 -220px;
-        }
-    #holder { border: 10px dashed #ccc; width: 150px; height: 150px; margin: 20px auto;}
-#holder.hover { border: 10px dashed #333; }
-    </style>
+    <link href="http://fonts.googleapis.com/css?family=Electrolize" media="all" rel="Stylesheet">
+    <link href="content/styles/Styles.css" media="all" rel="Stylesheet" />
+    <link href="content/styles/Ships.css" media="all" rel="Stylesheet" />
     <script type="text/javascript" src="content/scripts/DrawShips.js"></script>
+    <script type="text/javascript" src="content/scripts/html2canvas.js"></script>
 </head>
-<body>
+<body id="Top">
     <div id="InputFields">
         <p>
             Enter the number of Star Citizen Ships:
@@ -149,6 +46,8 @@
         </dl>
         <fieldset><legend>Optional Inputs</legend>
         <dl>
+            <dt>Output as image</dt>
+            <dd><input type="checkbox" checked="checked" id="OutputImg" /></dd>
             <dt>Logo Position</dt>
             <dd>
                 <select id="LogoPosition">
@@ -164,13 +63,19 @@
             <dd><input type="number" id="LogoHeight" /></dd>
         </dl>
         </fieldset>
-        <input type="button" value="Draw my page!" onclick="DrawShips()" />
+        <a href="#Top">
+            <input type="button" value="Draw my Faction!" id="btnDrawFaction" />
+        </a>
+        <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
     </div>
     <div id="Outputs">
         <h2>Output</h2>
-        <div id="holder"></div> 
-        <div id="ShipOutput">
+        <div id="logo">
+            <div id="holder"></div> 
         </div>
+        <table id="ShipOutput">
+            <tbody></tbody>
+        </table>
     </div>
 </body>
 </html>
