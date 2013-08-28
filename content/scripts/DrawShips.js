@@ -2,6 +2,13 @@
     //Clear the current output
     $("table#ShipOutput tbody").html("");
     
+    //We need to set the colors for the ships and text
+    var cssOverrides = [];
+    cssOverrides.push(".Ship{background-image:url('content/images/ships-" + $("#ShipColors").val() + ".png');}");
+    cssOverrides.push("body{background-color:"+ $("#BackgroundColor").val()+";}");
+    cssOverrides.push("body{color:" + $("#FontColor").val() + ";}");
+    $("#overrideStyles").html(cssOverrides.join(''));
+
     //Iterate over all of the ships, and output them
     $("dl#ships dd input[type=number]").each(function () {
         var shipInputBox = $(this);
