@@ -8,6 +8,7 @@
     <link href="content/styles/Ships.css" media="all" rel="Stylesheet" />
     <script type="text/javascript" src="content/scripts/DrawShips.js"></script>
     <script type="text/javascript" src="content/scripts/html2canvas.js"></script>
+    <style type="text/css" id="overrideStyles"></style>
 </head>
 <body id="Top">
     <div id="InputFields">
@@ -61,6 +62,53 @@
             <dd><input type="number" id="LogoWidth" /></dd>
             <dt>Logo Height</dt>
             <dd><input type="number" id="LogoHeight" /></dd>
+            <dt>Ship Colors</dt>
+            <dd>
+                <select id="ShipColors">
+                    <option selected="selected" value="black">Black</option>
+                    <option value="babyblue">Baby Blue</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="limegreen">Lime Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="purple">Purple</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="white">White</option>
+                </select>
+            </dd>
+            <dt>Background Color</dt>
+            <dd>
+                <select id="BackgroundColor">
+                    <option selected="selected" value="Gray">Gray</option>
+                    <option value="black">Black</option>
+                    <option value="babyblue">Baby Blue</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="limegreen">Lime Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="purple">Purple</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="white">White</option>
+                </select>
+            </dd>
+            <dt>Font Color</dt>
+            <dd>
+                <select id="FontColor">
+                    <option selected="selected" value="black">Black</option>
+                    <option value="babyblue">Baby Blue</option>
+                    <option value="blue">Blue</option>
+                    <option value="Gray">Gray</option>
+                    <option value="green">Green</option>
+                    <option value="limegreen">Lime Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="purple">Purple</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="white">White</option>
+                </select>
+            </dd>
         </dl>
         </fieldset>
         <a href="#Top">
@@ -77,16 +125,16 @@
             <tbody></tbody>
         </table>
     </div>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-42538014-1', 'raylehnhoff.github.io');
-        ga('send', 'pageview');
+            ga('create', 'UA-42538014-1', 'raylehnhoff.github.io');
+            ga('send', 'pageview');
 
 </script>
 </body>
