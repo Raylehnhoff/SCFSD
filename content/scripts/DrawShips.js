@@ -1,12 +1,12 @@
-﻿function DrawShips() {
+﻿var cssOverrides = [];
+function DrawShips() {
     //Clear the current output
     $("table#ShipOutput tbody").html("");
     
     //We need to set the colors for the ships and text
-    var cssOverrides = [];
     cssOverrides.push(".Ship{background-image:url('content/images/ships-" + $("#ShipColors").val() + ".png');}");
-    cssOverrides.push("body{background-color:"+ $("#BackgroundColor").val()+";}");
-    cssOverrides.push("body{color:" + $("#FontColor").val() + ";}");
+    cssOverrides.push("#ShipOutput{background-color:"+ $("#BackgroundColor").val()+";}");
+    cssOverrides.push("#ShipOutput{color:" + $("#FontColor").val() + ";}");
     $("#overrideStyles").html(cssOverrides.join(''));
 
     //Iterate over all of the ships, and output them
@@ -43,6 +43,7 @@ function OutputShip(shipName, numberToDraw, shipClassName) {
 function CreateImage() {
     setTimeout(function () {
         html2canvas([$('#ShipOutput').get(0)], {
+            background: $("#BackgroundColor").val(),
             onrendered: function (canvas) {
                 var strData = "#";
                 if (!(canvas.height == 0 || canvas.width == 0)) {
@@ -51,8 +52,7 @@ function CreateImage() {
                     $("#DownloadImageLink").attr('href', strData);
                     $("#DownloadImageLink").show();
                 }
-            },
-            background: "#D6D6D6"
+            }
         });
     }, 800);
 }
