@@ -30,14 +30,14 @@ function OutputShip(shipName, numberToDraw, shipClassName) {
         setTimeout(function () {
         var $shipOutput = $("table#ShipOutput tbody");
         $shipOutput.append("<tr class='ShipBox' id='" + shipClassName + "'>");
-        $shipOutput.append("<td class='ShipName'>" + shipName + "</td>");
-        $shipOutput.append("<td class='ShipContainer'>");
+        var $shipOutputInner = $("#" + shipClassName);
+        $shipOutputInner.append("<td class='ShipName'>" + shipName + "</td>");
+        $shipOutputInner.append("<td class='ShipContainer'>");
         for (var i = 0; i < numberToDraw; i++) {
-            $shipOutput.append("<div class='Ship fLeft " + shipClassName + "'></div>");
+            $shipOutputInner.find(".ShipContainer").append("<div class='Ship fLeft " + shipClassName + "'></div>");
         }
-        $shipOutput.append("</td>");
-        $shipOutput.append("</tr>");
-    }, 2);
+        
+    }, 5);
 }
 
 function CreateImage() {
