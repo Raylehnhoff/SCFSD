@@ -5,6 +5,15 @@ function DrawShips() {
     
     //We need to set the colors for the ships and text
     cssOverrides.push(".Ship{background-image:url('content/images/ships-" + $("#ShipColors").val() + ".png');}");
+    var shipMarginRight = parseInt($("#ShipMarginRight").val());
+    if (shipMarginRight % 1 === 0) {
+        cssOverrides.push(".Ship{margin-right:" + shipMarginRight + "px;}");
+    }
+    var shipMarginBottom = parseInt($("#ShipMarginBottom").val());
+    if (shipMarginBottom % 1 === 0) {
+        cssOverrides.push(".Ship{margin-bottom:" + shipMarginBottom + "px;}");
+    }
+
     cssOverrides.push("#ShipOutput{background-color:"+ $("#BackgroundColor").val()+";}");
     cssOverrides.push("#ShipOutput{color:" + $("#FontColor").val() + ";}");
     $("#overrideStyles").html(cssOverrides.join(''));
@@ -13,15 +22,10 @@ function DrawShips() {
     $("dl#ships dd input[type=number]").each(function () {
         var shipInputBox = $(this);
         var shipName;
-        var shipClassName;
-        //Validate ship names
-        shipName = shipInputBox.attr("id");
-        shipName = shipName.replace("ShipNumber", "");
-        shipClassName = shipName;
-        if (shipName == "s300Series") { shipName = "300 Series"; }
+        shipName = shipInputBox.attr("data-shipName");
         var numberToDraw = shipInputBox.val();
         if (numberToDraw > 0) {
-            OutputShip(shipName, numberToDraw, shipClassName);
+            OutputShip(shipName, numberToDraw, shipName);
         }
     });
     HandleOptionalParams();
@@ -34,7 +38,7 @@ function OutputShip(shipName, numberToDraw, shipClassName) {
         $shipOutputInner.append("<td class='ShipName'>" + shipName + "</td>");
         $shipOutputInner.append("<td class='ShipContainer'>");
         for (var i = 0; i < numberToDraw; i++) {
-            $shipOutputInner.find(".ShipContainer").append("<div class='Ship fLeft " + shipClassName + "'></div>");
+            $shipOutputInner.find(".ShipContainer").append("<div class='Ship " + shipClassName + "'></div>");
         }
         
     }, 5);
@@ -121,9 +125,9 @@ function BindEvents() {
 
         return false;
     };
+    //Hide the download Image Link
+    $("#DownloadImageLink").hide();
 }
 $(document).ready(function () {
     BindEvents();
-    //Hide the download Image Link
-    $("#DownloadImageLink").hide();
 });
