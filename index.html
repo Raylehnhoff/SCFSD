@@ -17,33 +17,33 @@
         </p>
         <dl id="ships">
             <dt>M50</dt>
-            <dd><input type="number" id="M50ShipNumber" /></dd>
+            <dd><input type="number" id="M50ShipNumber" data-shipName="M50" /></dd>
             <dt>Aurora</dt>
-            <dd><input type="number" id="AuroraShipNumber" /></dd>
+            <dd><input type="number" id="AuroraShipNumber" data-shipName="Aurora" /></dd>
             <dt>Avenger</dt>
-            <dd><input type="number" id="AvengerShipNumber" /></dd>
+            <dd><input type="number" id="AvengerShipNumber" data-shipName="Avenger" /></dd>
             <dt>Hornet</dt>
-            <dd><input type="number" id="HornetShipNumber" /></dd>
+            <dd><input type="number" id="HornetShipNumber" data-shipName="Hornet" /></dd>
             <dt>300 Series</dt>
-            <dd><input type="number" id="s300SeriesShipNumber" /></dd>
+            <dd><input type="number" id="s300SeriesShipNumber" data-shipName="300 Series" /></dd>
             <dt>Cutlass</dt>
-            <dd><input type="number" id="CutlassShipNumber" /></dd>
+            <dd><input type="number" id="CutlassShipNumber" data-shipName="Cutlass" /></dd>
             <dt>Gladiator</dt>
-            <dd><input type="number" id="GladiatorShipNumber" /></dd>
+            <dd><input type="number" id="GladiatorShipNumber" data-shipName="Gladiator" /></dd>
             <dt>Freelancer</dt>
-            <dd><input type="number" id="FreelancerShipNumber" /></dd>
+            <dd><input type="number" id="FreelancerShipNumber" data-shipName="Freelancer"/></dd>
             <dt>Scythe</dt>
-            <dd><input type="number" id="ScytheShipNumber" /></dd>
+            <dd><input type="number" id="ScytheShipNumber" data-shipName="Scythe"/></dd>
             <dt>Retaliator</dt>
-            <dd><input type="number" id="RetaliatorShipNumber" /></dd>
+            <dd><input type="number" id="RetaliatorShipNumber" data-shipName="Retaliator"/></dd>
             <dt>Caterpillar</dt>
-            <dd><input type="number" id="CaterpillarShipNumber" /></dd>
+            <dd><input type="number" id="CaterpillarShipNumber" data-shipName="Caterpillar"/></dd>
             <dt>Constellation</dt>
-            <dd><input type="number" id="ConstellationShipNumber" /></dd>
+            <dd><input type="number" id="ConstellationShipNumber" data-shipName="Constellation"/></dd>
             <dt>Starfarer</dt>
-            <dd><input type="number" id="StarfarerShipNumber" /></dd>
+            <dd><input type="number" id="StarfarerShipNumber" data-shipName="Starfarer"/></dd>
             <dt>Idris</dt>
-            <dd><input type="number" id="IdrisShipNumber" /></dd>
+            <dd><input type="number" id="IdrisShipNumber" data-shipName="Idris"/></dd>
         </dl>
         <fieldset><legend>Optional Inputs</legend>
         <dl>
@@ -62,6 +62,10 @@
             <dd><input type="number" id="LogoWidth" /></dd>
             <dt>Logo Height</dt>
             <dd><input type="number" id="LogoHeight" /></dd>
+            <dt>Ship Margin (Right)</dt>
+            <dd><input type="number" id="ShipMarginRight" /></dd>
+            <dt>Ship Margin (Bottom)</dt>
+            <dd><input type="number" id="ShipMarginBottom" /></dd>
             <dt>Ship Colors</dt>
             <dd>
                 <select id="ShipColors">
@@ -109,6 +113,7 @@
                     <option value="white">White</option>
                 </select>
             </dd>
+        </dl>
         </dl>
         </fieldset>
         <a href="#Top">
