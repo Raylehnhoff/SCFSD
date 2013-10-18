@@ -20,12 +20,14 @@ function DrawShips() {
 
     //Iterate over all of the ships, and output them
     $("dl#ships dd input[type=number]").each(function () {
-        var shipInputBox = $(this);
+        var $shipInputBox = $(this);
         var shipName;
-        shipName = shipInputBox.attr("data-shipName");
-        var numberToDraw = shipInputBox.val();
+        var shipClassName;
+        shipName = $shipInputBox.attr("data-shipName");
+        shipClassName = $shipInputBox.attr("data-shipClassName");
+        var numberToDraw = $shipInputBox.val();
         if (numberToDraw > 0) {
-            OutputShip(shipName, numberToDraw, shipName);
+            OutputShip(shipName, numberToDraw, shipClassName);
         }
     });
     HandleOptionalParams();
