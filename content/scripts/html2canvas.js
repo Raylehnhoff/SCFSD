@@ -463,7 +463,7 @@ html2canvas;
   /^(-webkit-radial-gradient)\(((?:\d{1,3}%?)\s(?:\d{1,3}%?)),\s(\w+)\s([a-z\-]+)([\w\d\.\s,%\(\)]+)\)$/,
   /^(-moz-radial-gradient)\(((?:\d{1,3}%?)\s(?:\d{1,3}%?)),\s(\w+)\s?([a-z\-]*)([\w\d\.\s,%\(\)]+)\)$/,
   /^(-o-radial-gradient)\(((?:\d{1,3}%?)\s(?:\d{1,3}%?)),\s(\w+)\s([a-z\-]+)([\w\d\.\s,%\(\)]+)\)$/
-  ];
+        ];
 
         /*
         * TODO: Add IE10 vendor prefix (-ms) support
@@ -739,7 +739,7 @@ html2canvas;
                                     }
                                     break;
 
-                                // TODO: add support for "30px 40px" sizes (webkit only) 
+                                    // TODO: add support for "30px 40px" sizes (webkit only) 
                             }
                         }
 
@@ -2136,7 +2136,7 @@ html2canvas;
     "</html>",
     "</foreignObject>",
     "</svg>"
-    ].join("");
+            ].join("");
 
             img.onload = function () {
                 stack.svgRender = img;
@@ -2411,7 +2411,7 @@ html2canvas;
                             } else {
                                 this.img.onerror();
                             }
-                        } .bind(imageObj);
+                        }.bind(imageObj);
                         img.customComplete();
 
                     } else if (options.proxy) {
@@ -2578,7 +2578,7 @@ html2canvas;
     "</div>",
     "</foreignObject>",
     "</svg>"
-    ].join("");
+            ].join("");
             try {
                 ctx.drawImage(img, 0, 0);
                 canvas.toDataURL();

@@ -5,16 +5,26 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Electrolize" media="all" rel="Stylesheet">
     <link href="content/styles/Styles.css" media="all" type="text/css" rel="Stylesheet" />
-    <link href="content/styles/Ships.css" media="all" type="text/css" rel="Stylesheet" />
-    <script type="text/javascript" src="content/scripts/DrawShips.js"></script>
+    <link href="content/styles/Ships.css?v=21102013" media="all" type="text/css" rel="Stylesheet" />
+    <meta name="description" content="Star Citizen Faction Poster Maker" />
     <script type="text/javascript" src="content/scripts/html2canvas.js"></script>
+    <script type="text/javascript" src="Content/scripts/modernizr.js"></script>
+    <script type="text/javascript" src="content/scripts/SCFSD.js"></script>
     <style type="text/css" id="overrideStyles"></style>
 </head>
 <body id="Top">
+    <h2>Star Citizen Faction Ship Drawer</h2>
+    <p>
+        This tool uses <a href="http://www.html5rocks.com/en/features/storage">HTML5 LocalStorage</a> to store your inputs for future use.
+    </p>
+    <p>
+        You may see a "flash" as the HTML becomes an image. This will allow you to right-click the image and save it, as opposed to using the download link.
+    </p>
+    <p>
+        Questions? Comments? Issues? Message <a href="http://www.reddit.com/message/compose/?to=smdaegan">/u/smdaegan on reddit</a> or <a href="https://github.com/Raylehnhoff/SCFSD/issues">open an issue</a> on GitHub!
+    </p>
     <div id="InputFields">
-        <p>
-            Enter the number of Star Citizen Ships:
-        </p>
+        <fieldset class="fLeft"><legend>Ships</legend>
         <dl id="ships">
             <dt>M50</dt>
             <dd><input type="number" id="M50ShipNumber" data-shipName="M50" data-shipClassName="M50" /></dd>
@@ -22,30 +32,31 @@
             <dd><input type="number" id="AuroraShipNumber" data-shipName="Aurora" data-shipClassName="Aurora" /></dd>
             <dt>Avenger</dt>
             <dd><input type="number" id="AvengerShipNumber" data-shipName="Avenger" data-shipClassName="Avenger" /></dd>
+            <dt>Gladiator</dt>
+            <dd><input type="number" id="GladiatorShipNumber" data-shipName="Gladiator" data-shipClassName="Gladiator" /></dd>
             <dt>Hornet</dt>
             <dd><input type="number" id="HornetShipNumber" data-shipName="Hornet" data-shipClassName="Hornet" /></dd>
+            <dt>Scythe</dt>
+            <dd><input type="number" id="ScytheShipNumber" data-shipName="Scythe" data-shipClassName="Scythe"/></dd>
             <dt>300 Series</dt>
             <dd><input type="number" id="s300SeriesShipNumber" data-shipName="300 Series" data-shipClassName="s300Series" /></dd>
             <dt>Cutlass</dt>
             <dd><input type="number" id="CutlassShipNumber" data-shipName="Cutlass" data-shipClassName="Cutlass" /></dd>
-            <dt>Gladiator</dt>
-            <dd><input type="number" id="GladiatorShipNumber" data-shipName="Gladiator" data-shipClassName="Gladiator" /></dd>
             <dt>Freelancer</dt>
             <dd><input type="number" id="FreelancerShipNumber" data-shipName="Freelancer" data-shipClassName="Freelancer"/></dd>
-            <dt>Scythe</dt>
-            <dd><input type="number" id="ScytheShipNumber" data-shipName="Scythe" data-shipClassName="Scythe"/></dd>
+            <dt>Constellation</dt>
+            <dd><input type="number" id="ConstellationShipNumber" data-shipName="Constellation" data-shipClassName="Constellation"/></dd>
             <dt>Retaliator</dt>
             <dd><input type="number" id="RetaliatorShipNumber" data-shipName="Retaliator" data-shipClassName="Retaliator"/></dd>
             <dt>Caterpillar</dt>
             <dd><input type="number" id="CaterpillarShipNumber" data-shipName="Caterpillar" data-shipClassName="Caterpillar"/></dd>
-            <dt>Constellation</dt>
-            <dd><input type="number" id="ConstellationShipNumber" data-shipName="Constellation" data-shipClassName="Constellation"/></dd>
             <dt>Starfarer</dt>
             <dd><input type="number" id="StarfarerShipNumber" data-shipName="Starfarer" data-shipClassName="Starfarer"/></dd>
             <dt>Idris</dt>
             <dd><input type="number" id="IdrisShipNumber" data-shipName="Idris" data-shipClassName="Idris"/></dd>
         </dl>
-        <fieldset><legend>Optional Inputs</legend>
+        </fieldset>
+        <fieldset class="fLeft"><legend>Optional Inputs</legend>
         <dl>
             <dt>Output as image</dt>
             <dd><input type="checkbox" checked="checked" id="OutputImg" /></dd>
@@ -70,10 +81,10 @@
             <dd>
                 <select id="ShipColors">
                     <option selected="selected" value="black">Black</option>
-                    <option value="babyblue">Baby Blue</option>
                     <option value="blue">Blue</option>
                     <option value="green">Green</option>
-                    <option value="limegreen">Lime Green</option>
+                    <option value="grey">Grey</option>
+                    <option value="magenta">Magenta</option>
                     <option value="orange">Orange</option>
                     <option value="purple">Purple</option>
                     <option value="red">Red</option>
@@ -101,7 +112,6 @@
             <dd>
                 <select id="FontColor">
                     <option selected="selected" value="black">Black</option>
-                    <option value="babyblue">Baby Blue</option>
                     <option value="blue">Blue</option>
                     <option value="Gray">Gray</option>
                     <option value="green">Green</option>
@@ -115,10 +125,12 @@
             </dd>
         </dl>
         </fieldset>
-        <a href="#Top">
-            <input type="button" value="Draw my Faction!" id="btnDrawFaction" />
-        </a>
-        <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
+        <div class="clear">
+            <a href="#Top">
+                <input type="button" value="Draw my Faction!" id="btnDrawFaction" />
+            </a>
+            <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
+        </div>
     </div>
     <div id="Outputs">
         <h2>Output</h2>
