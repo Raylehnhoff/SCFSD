@@ -2,90 +2,91 @@
 .ShipBox{margin:15px 0;}
 .Ship
 {
-    background-image:url('../images/ships.png');
+    background-image:url('../images/ship-black.png');
     display:inline-block;
+    float:left;
 }
 .M50
 {
     height:10px;
-    width:21px;
-    background-position:0 0;
+    width:46px;
+    background-position:0 2px;
 }
 .Aurora
 {
-    height:14px;
-    width:30px;
-    background-position: 0 -6px;
+    height:19px;
+    width:74px;
+    background-position: 0 -19px;
 }
 .Avenger
 {
-    height:15px;
-    width:42px;
-    background-position:0 -19px;
-}
-.Hornet
-{
-    height:14px;
-    width:44px;
-    background-position:0 -37px;
-}
-.s300Series
-{
-    height:11px;
-    width:44px;
-    background-position:0 -272px;
-}
-.Cutlass
-{
-    height:13px;
-    width:44px;
-    background-position:0 -292px;
+    height:21px;
+    width:72px;
+    background-position:0 -44px;
 }
 .Gladiator
 {
-    height:14px;
-    width:48px;
-    background-position:0 -53px;
+    height:21px;
+    width:81px;
+    background-position:0 -70px;
 }
-.Freelancer
+.Hornet
 {
-    height:14px;
-    width:48px;
-    background-position:0 -76px;
+    height:23px;
+    width:90px;
+    background-position:0 -96px;
 }
 .Scythe
 {
-    height:14px;
-    width:52px;
-    background-position:0 -313px;
+    height:30px;
+    width:115px;
+    background-position:0 -125px;
 }
-.Retaliator
+.s300Series
 {
-    height:14px;
-    width:74px;
-    background-position:0 -99px;
+    height:25px;
+    width:100px;
+    background-position:0 -162px;
 }
-.Caterpillar
+.Cutlass
 {
-    height:15px;
-    width:74px;
-    background-position:0 -120px;
+    height:30px;
+    width:125px;
+    background-position:0 -200px;
+}
+.Freelancer
+{
+    height:32px;
+    width:130px;
+    background-position:0 -230px;
 }
 .Constellation
 {
-    height:24px;
-    width:90px;
-    background-position:0 -139px;
+    height:52px;
+    width:216px;
+    background-position:0 -272px;
+}
+.Retaliator
+{
+    height:41px;
+    width:255px;
+    background-position:0 -333px;
+}
+.Caterpillar
+{
+    height:34px;
+    width:280px;
+    background-position:0 -388px;
 }
 .Starfarer
 {
-    height:38px;
-    width:170px;
-    background-position:0 -171px;
+    height:85px;
+    width:355px;
+    background-position:0 -433px;
 }
 .Idris
 {
-    height:50px;
-    width:232px;
-    background-position:0 -220px;
+    height:85px;
+    width:475px;
+    background-position:0 -530px;
 }
