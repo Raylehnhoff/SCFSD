@@ -76,8 +76,8 @@ SCFSD.prototype.CreateImage = function () {
                     strData.replace("image/png", "image/octet-stream");
                     $("#DownloadImageLink").attr('href', strData);
                     $("#DownloadImageLink").show();
-                    //$("#ShipOutput tbody").html('');
-                    //$("#ShipOutput tbody").append('<tr><td><img src=\'' + strData + '\' alt="Faction Ships" download="FactionShips.png" /></td></tr>');
+                    $("#ShipOutput tbody").html('');
+                    $("#ShipOutput tbody").append('<tr><td><img src=\'' + strData + '\' alt="Faction Ships" download="FactionShips.png" /></td></tr>');
                 }
             }
         });
