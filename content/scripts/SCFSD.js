@@ -67,7 +67,7 @@ SCFSD.prototype.DrawShips = function () {
 SCFSD.prototype.CreateImage = function () {
     "use strict";
     setTimeout(function () {
-        html2canvas([$('#Outputs').get(0)], {
+        html2canvas([$('#ShipOutput').get(0)], {
             background: $("#BackgroundColor").val(),
             onrendered: function (canvas) {
                 var strData = "#";
