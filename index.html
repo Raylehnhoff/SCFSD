@@ -18,7 +18,11 @@
         This tool uses <a href="http://www.html5rocks.com/en/features/storage">HTML5 LocalStorage</a> to store your inputs for future use.
     </p>
     <p>
-        You may see a "flash" as the HTML becomes an image. This will allow you to right-click the image and save it, as opposed to using the download link.
+        You may see a "flash" as the HTML becomes an image. This will allow you to right-click the image and save it, as opposed to using the download link. 
+        
+    </p>
+    <p>
+        You may also see clipping issues if you've scrolled during the rendering of the image. This is due to a the html2canvas plugin we're using, and is a known issue with that library.
     </p>
     <p>
         Questions? Comments? Issues? Message <a href="http://www.reddit.com/message/compose/?to=smdaegan">/u/smdaegan on reddit</a> or <a href="https://github.com/Raylehnhoff/SCFSD/issues">open an issue</a> on GitHub!
@@ -132,8 +136,8 @@
             <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
         </div>
     </div>
+    <h2>Output</h2>
     <div id="Outputs">
-        <h2>Output</h2>
         <div id="logo">
             <div id="holder"></div> 
         </div>
