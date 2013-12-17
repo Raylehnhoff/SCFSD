@@ -18,7 +18,7 @@
         This tool uses <a href="http://www.html5rocks.com/en/features/storage">HTML5 LocalStorage</a> to store your inputs for future use.
     </p>
     <p>
-        You may also see clipping issues if you've scrolled during the rendering of the image. This is due to a the html2canvas plugin we're using, and is a known issue with that library.
+        You may also see clipping issues if you've scrolled during the rendering of the image, or are not at the top of the page when you click "Draw my Faction!". This is due to a the html2canvas plugin we're using, and is a known issue with that library.
     </p>
     <p>
         Questions? Comments? Issues? Message <a href="http://www.reddit.com/message/compose/?to=smdaegan">/u/smdaegan on reddit</a> or <a href="https://github.com/Raylehnhoff/SCFSD/issues">open an issue</a> on GitHub!
@@ -54,6 +54,8 @@
             <dd><input type="number" id="StarfarerShipNumber" data-shipName="Starfarer" data-shipClassName="Starfarer"/></dd>
             <dt>Idris</dt>
             <dd><input type="number" id="IdrisShipNumber" data-shipName="Idris" data-shipClassName="Idris"/></dd>
+            <dt>Merchantman</dt>
+            <dd><input type="number" id="MerchantmanShipNumber" data-shipName="Merchantman" data-shipClassName="Merchantman" /></dd>
         </dl>
         </fieldset>
         <fieldset class="fLeft"><legend>Optional Inputs</legend>
@@ -83,7 +85,7 @@
                     <option selected="selected" value="black">Black</option>
                     <option value="blue">Blue</option>
                     <option value="green">Green</option>
-                    <option value="grey">Grey</option>
+                    <option value="gray">Gray</option>
                     <option value="crimson">Crimson</option>
                     <option value="orange">Orange</option>
                     <option value="purple">Purple</option>
@@ -142,16 +144,16 @@
             <tbody></tbody>
         </table>
     </div>
-		<script>
-		(function (i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date(); a = s.createElement(o),
-  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    	<script>
+    	    (function (i, s, o, g, r, a, m) {
+    	        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+    	            (i[r].q = i[r].q || []).push(arguments)
+    	        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    	    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-42538014-1', 'raylehnhoff.github.io');
-		ga('send', 'pageview');
+    	    ga('create', 'UA-42538014-1', 'raylehnhoff.github.io');
+    	    ga('send', 'pageview');
 
 	</script>
 </body>

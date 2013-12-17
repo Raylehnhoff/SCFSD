@@ -27,3 +27,5 @@ If you have a request for this, even if it's small, please use the Issue Tracker
 Feel free to issue a Pull Request and I'll look it over. 
 
 Thanks!
+
+[Thanks to our current contributors!](https://github.com/Raylehnhoff/SCFSD/blob/master/contributors.md)
