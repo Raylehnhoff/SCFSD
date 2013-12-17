@@ -27,35 +27,35 @@
         <fieldset class="fLeft"><legend>Ships</legend>
         <dl id="ships">
             <dt>M50</dt>
-            <dd><input type="number" id="M50ShipNumber" data-shipName="M50" data-shipClassName="M50" /></dd>
+            <dd><input type="number" min="0" id="M50ShipNumber" data-shipName="M50" data-shipClassName="M50" /></dd>
             <dt>Aurora</dt>
-            <dd><input type="number" id="AuroraShipNumber" data-shipName="Aurora" data-shipClassName="Aurora" /></dd>
+            <dd><input type="number" min="0" id="AuroraShipNumber" data-shipName="Aurora" data-shipClassName="Aurora" /></dd>
             <dt>Avenger</dt>
-            <dd><input type="number" id="AvengerShipNumber" data-shipName="Avenger" data-shipClassName="Avenger" /></dd>
+            <dd><input type="number" min="0" id="AvengerShipNumber" data-shipName="Avenger" data-shipClassName="Avenger" /></dd>
             <dt>Gladiator</dt>
-            <dd><input type="number" id="GladiatorShipNumber" data-shipName="Gladiator" data-shipClassName="Gladiator" /></dd>
+            <dd><input type="number" min="0" id="GladiatorShipNumber" data-shipName="Gladiator" data-shipClassName="Gladiator" /></dd>
             <dt>Hornet</dt>
-            <dd><input type="number" id="HornetShipNumber" data-shipName="Hornet" data-shipClassName="Hornet" /></dd>
+            <dd><input type="number" min="0" id="HornetShipNumber" data-shipName="Hornet" data-shipClassName="Hornet" /></dd>
             <dt>Scythe</dt>
-            <dd><input type="number" id="ScytheShipNumber" data-shipName="Scythe" data-shipClassName="Scythe"/></dd>
+            <dd><input type="number" min="0" id="ScytheShipNumber" data-shipName="Scythe" data-shipClassName="Scythe"/></dd>
             <dt>300 Series</dt>
-            <dd><input type="number" id="s300SeriesShipNumber" data-shipName="300 Series" data-shipClassName="s300Series" /></dd>
+            <dd><input type="number" min="0" id="s300SeriesShipNumber" data-shipName="300 Series" data-shipClassName="s300Series" /></dd>
             <dt>Cutlass</dt>
-            <dd><input type="number" id="CutlassShipNumber" data-shipName="Cutlass" data-shipClassName="Cutlass" /></dd>
+            <dd><input type="number" min="0" id="CutlassShipNumber" data-shipName="Cutlass" data-shipClassName="Cutlass" /></dd>
             <dt>Freelancer</dt>
-            <dd><input type="number" id="FreelancerShipNumber" data-shipName="Freelancer" data-shipClassName="Freelancer"/></dd>
+            <dd><input type="number" min="0" id="FreelancerShipNumber" data-shipName="Freelancer" data-shipClassName="Freelancer"/></dd>
             <dt>Constellation</dt>
-            <dd><input type="number" id="ConstellationShipNumber" data-shipName="Constellation" data-shipClassName="Constellation"/></dd>
+            <dd><input type="number" min="0" id="ConstellationShipNumber" data-shipName="Constellation" data-shipClassName="Constellation"/></dd>
             <dt>Retaliator</dt>
-            <dd><input type="number" id="RetaliatorShipNumber" data-shipName="Retaliator" data-shipClassName="Retaliator"/></dd>
+            <dd><input type="number" min="0" id="RetaliatorShipNumber" data-shipName="Retaliator" data-shipClassName="Retaliator"/></dd>
             <dt>Caterpillar</dt>
-            <dd><input type="number" id="CaterpillarShipNumber" data-shipName="Caterpillar" data-shipClassName="Caterpillar"/></dd>
+            <dd><input type="number" min="0" id="CaterpillarShipNumber" data-shipName="Caterpillar" data-shipClassName="Caterpillar"/></dd>
             <dt>Starfarer</dt>
-            <dd><input type="number" id="StarfarerShipNumber" data-shipName="Starfarer" data-shipClassName="Starfarer"/></dd>
+            <dd><input type="number" min="0" id="StarfarerShipNumber" data-shipName="Starfarer" data-shipClassName="Starfarer"/></dd>
             <dt>Idris</dt>
-            <dd><input type="number" id="IdrisShipNumber" data-shipName="Idris" data-shipClassName="Idris"/></dd>
+            <dd><input type="number" min="0" id="IdrisShipNumber" data-shipName="Idris" data-shipClassName="Idris"/></dd>
             <dt>Merchantman</dt>
-            <dd><input type="number" id="MerchantmanShipNumber" data-shipName="Merchantman" data-shipClassName="Merchantman" /></dd>
+            <dd><input type="number" min="0" id="MerchantmanShipNumber" data-shipName="Merchantman" data-shipClassName="Merchantman" /></dd>
         </dl>
         </fieldset>
         <fieldset class="fLeft"><legend>Optional Inputs</legend>
@@ -72,13 +72,13 @@
                 </select>
             </dd>
             <dt>Logo Width</dt>
-            <dd><input type="number" id="LogoWidth" /></dd>
+            <dd><input type="number" min="0" id="LogoWidth" /></dd>
             <dt>Logo Height</dt>
-            <dd><input type="number" id="LogoHeight" /></dd>
+            <dd><input type="number" min="0" id="LogoHeight" /></dd>
             <dt>Ship Margin (Right)</dt>
-            <dd><input type="number" id="ShipMarginRight" /></dd>
+            <dd><input type="number" min="0" id="ShipMarginRight" /></dd>
             <dt>Ship Margin (Bottom)</dt>
-            <dd><input type="number" id="ShipMarginBottom" /></dd>
+            <dd><input type="number" min="0" id="ShipMarginBottom" /></dd>
             <dt>Ship Colors</dt>
             <dd>
                 <select id="ShipColors">
@@ -131,6 +131,9 @@
         <div class="clear">
             <a href="#Top">
                 <input type="button" value="Draw my Faction!" id="btnDrawFaction" />
+            </a>
+            <a href="#Top">
+                <input type="button" value="Reset" id="btnResetValues" />
             </a>
             <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
         </div>
