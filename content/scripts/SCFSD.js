@@ -17,7 +17,12 @@ SCFSD.prototype.OutputShip = function (shipName, numberToDraw, shipClassName) {
         var $shipOutput = $("table#ShipOutput tbody");
         $shipOutput.append("<tr class='ShipBox' id='" + shipClassName + "'>");
         var $shipOutputInner = $("#" + shipClassName);
-        $shipOutputInner.append("<td class='ShipName'>" + shipName + "</td>");
+        if ($("#ShowShipCount").prop("checked")) {
+            $shipOutputInner.append("<td class='ShipName'>" + shipName + "<br/>("+numberToDraw+")</td>");
+        }
+        else {
+            $shipOutputInner.append("<td class='ShipName'>" + shipName + "</td>");
+        }
         $shipOutputInner.append("<td class='ShipContainer'>");
         for (var i = 0; i < numberToDraw; i++) {
             $shipOutputInner.find(".ShipContainer").append("<div class='Ship " + shipClassName + "'></div>");
@@ -76,8 +81,6 @@ SCFSD.prototype.CreateImage = function () {
                     strData.replace("image/png", "image/octet-stream");
                     $("#DownloadImageLink").attr('href', strData);
                     $("#DownloadImageLink").show();
-                    //$("#ShipOutput tbody").html('');
-                    //$("#ShipOutput tbody").append('<tr><td><img src=\'' + strData + '\' alt="Faction Ships" download="FactionShips.png" /></td></tr>');
                 }
             }
         });
@@ -163,8 +166,20 @@ SCFSD.prototype.GetShipsFromLocalStorage = function () {
         }
     }
 };
+
+SCFSD.prototype.ClearShips = function () {
+    "use strict";
+    for (var i in localStorage) {
+        localStorage[i] = null;
+    }
+    $("input[type=number]").val('0');
+    $("#ShipOutput").html("");
+    $("#DownloadImageLink").hide();
+};
+
+var shipDrawer;
 $(document).ready(function () {
     "use strict";
-    var shipDrawer = new SCFSD();
+    shipDrawer = new SCFSD();
     shipDrawer.init();
 });
