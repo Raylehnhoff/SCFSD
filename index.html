@@ -62,6 +62,8 @@
         <dl>
             <dt>Output as image</dt>
             <dd><input type="checkbox" checked="checked" id="OutputImg" /></dd>
+            <dt>Ship Count By Name</dt>
+            <dd><input type="checkbox" id="ShowShipCount" /></dd>
             <dt>Logo Position</dt>
             <dd>
                 <select id="LogoPosition">
@@ -130,7 +132,7 @@
         </fieldset>
         <div class="clear">
             <a href="#Top">
-                <input type="button" value="Draw my Faction!" id="btnDrawFaction" />
+                <input type="button" value="Draw my Faction!" id="btnDrawFaction" /> <input type="button" onclick="shipDrawer.ClearShips();" value="Clear" />
             </a>
             <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
         </div>
