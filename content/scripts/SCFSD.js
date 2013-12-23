@@ -68,6 +68,14 @@ SCFSD.prototype.DrawShips = function () {
     this.HandleOptionalParams();
 };
 
+SCFSD.prototype.ResetValues = function () {
+    "use strict";
+    for (var i in localStorage) {
+
+        localStorage[i] = 0;
+    }
+    location.reload();
+};
 
 SCFSD.prototype.CreateImage = function () {
     "use strict";
@@ -134,6 +142,7 @@ SCFSD.prototype.BindEvents = function () {
     var _self = this;
     //Bind the button to draw the ships
     $('#btnDrawFaction').on('click', function () { _self.DrawShips(); });
+    $('#btnResetValues').on('click', function () { _self.ResetValues(); });
     //Bind the HTML Image Dropper (for the logo)
     var holder = document.getElementById('holder');
     holder.ondragover = function () { this.className = 'hover'; return false; };
