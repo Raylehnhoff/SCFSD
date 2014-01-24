@@ -32,4 +32,4 @@ Thanks!
 
 ##License
 
-This software is licensed under the [MIT License](https://github.com/Raylehnhoff/SCFSD/blob/master/license.txt)
+This software is licensed under the [MIT License](https://github.com/Raylehnhoff/SCFSD/blob/master/LICENSE.txt)
