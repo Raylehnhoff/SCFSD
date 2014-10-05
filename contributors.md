@@ -11,3 +11,5 @@
 	* Updated ship sizes and sprites
 * YT-0
     * New hornet asset
+* Stankafucile
+	* New assets for Mustang, Xi'an, Gladius, and the reclaimer
