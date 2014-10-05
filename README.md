@@ -29,7 +29,3 @@ Feel free to issue a Pull Request and I'll look it over.
 Thanks!
 
 [Thanks to our current contributors!](https://github.com/Raylehnhoff/SCFSD/blob/master/contributors.md)
-
-##License
-
-This software is licensed under the [MIT License](https://github.com/Raylehnhoff/SCFSD/blob/master/LICENSE.txt)
