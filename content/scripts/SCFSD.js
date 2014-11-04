@@ -45,6 +45,10 @@ SCFSD.prototype.DrawShips = function () {
     if (shipMarginBottom % 1 === 0) {
         _self.cssOverrides.push(".Ship{margin-bottom:" + shipMarginBottom + "px;}");
     }
+    var imageWidth = parseInt($("#ImageWidth").val(), 10);
+    if (imageWidth % 1 === 0) {
+        _self.cssOverrides.push("#ShipOutput{width:" + imageWidth + "px;}");
+    }
 
     _self.cssOverrides.push("#ShipOutput{background-color:" + $("#BackgroundColor").val() + ";}");
     _self.cssOverrides.push("#ShipOutput{color:" + $("#FontColor").val() + ";}");
