@@ -5,7 +5,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Electrolize" media="all" rel="Stylesheet">
     <link href="content/styles/Styles.css" media="all" type="text/css" rel="Stylesheet" />
-    <link href="content/styles/Ships.css?v=21102013" media="all" type="text/css" rel="Stylesheet" />
+    <link href="content/styles/Ships.css?v=07062015" media="all" type="text/css" rel="Stylesheet" />
     <meta name="description" content="Star Citizen Faction Poster Maker" />
     <script type="text/javascript" src="content/scripts/html2canvas.js"></script>
     <script type="text/javascript" src="content/scripts/Modernizr.js"></script>
@@ -26,66 +26,75 @@
     <div id="InputFields">
         <fieldset class="fLeft"><legend>Ships</legend>
         <dl id="ships">
-            <dt>M50</dt>
-            <dd><input type="number" id="M50ShipNumber" data-shipName="M50" data-shipClassName="M50" /></dd>
-            <dt>Mustang</dt>
-            <dd><input type="number" id="MustangShipNumber" data-shipname="Mustang" data-shipclassname="Mustang" /></dd>
             <dt>Aurora</dt>
             <dd><input type="number" id="AuroraShipNumber" data-shipName="Aurora" data-shipClassName="Aurora" /></dd>
+            <dt>Mustang</dt>
+            <dd><input type="number" id="MustangShipNumber" data-shipname="Mustang" data-shipclassname="Mustang" /></dd>
+            <dt>Reliant</dt>
+            <dd><input type="number" id="ReliantShipNumber" data-shipname="Reliant" data-shipclassname="Reliant" /></dd>
+
             <dt>Avenger</dt>
             <dd><input type="number" id="AvengerShipNumber" data-shipName="Avenger" data-shipClassName="Avenger" /></dd>
-            <dt>Gladiator</dt>
-            <dd><input type="number" id="GladiatorShipNumber" data-shipName="Gladiator" data-shipClassName="Gladiator" /></dd>
+            <dt>Gladius</dt>
+            <dd><input type="number" id="GladiusShipNumber" data-shipname="Gladius" data-shipclassname="Gladius" /></dd>
+            <dt>M50</dt>
+            <dd><input type="number" id="M50ShipNumber" data-shipName="M50" data-shipClassName="M50" /></dd>
+            <dt>300 Series</dt>
+            <dd><input type="number" id="s300iShipNumber" data-shipname="300 Series" data-shipclassname="s300i" /></dd>
+            <dt>Herald</td>
+            <dd><input type="number" id="HeraldShipNumber" data-shipName="Herald" data-shipClassName="Herald"/></dd>
             <dt>Hornet</dt>
             <dd><input type="number" id="HornetShipNumber" data-shipName="Hornet" data-shipClassName="Hornet" /></dd>
-            
-            <dt>300 Series</dt>
-            <dd><input type="number" id="s300SeriesShipNumber" data-shipname="300 Series" data-shipclassname="s300Series" /></dd>
-            <dt>Herald</td>
-			<dd><input type="number" id="HeraldShipNumber" data-shipName="Herald" data-shipClassName="Herald"/></dd>
-			
-			<dt>Gladius</dt>
-            <dd><input type="number" id="GladiusShipNumber" data-shipname="Gladius" data-shipclassname="Gladius" /></dd>
-            
-            <dt>Xi'an Scout</dt>
-            <dd><input type="number" id="XianScoutShipNumber" data-shipname="Xi'an Scout" data-shipclassname="XianScout" /></dd>
-            
+            <dt>Gladiator</dt>
+            <dd><input type="number" id="GladiatorShipNumber" data-shipName="Gladiator" data-shipClassName="Gladiator" /></dd>
+            <dt>Vanguard</td>
+            <dd><input type="number" id="VanguardShipNumber" data-shipName="Vanguard" data-shipClassName="Vanguard"/></dd>
+            <dt>Khartu</dt>
+            <dd><input type="number" id="KhartuScoutShipNumber" data-shipname="Khartu" data-shipclassname="Khartu" /></dd>
             <dt>Scythe</dt>
             <dd><input type="number" id="ScytheShipNumber" data-shipName="Scythe" data-shipClassName="Scythe"/></dd>
+
+            <dt>Redeemer</td>
+            <dd><input type="number" id="RedeemerShipNumber" data-shipName="Redeemer" data-shipClassName="Redeemer"/></dd>
             <dt>Cutlass</dt>
             <dd><input type="number" id="CutlassShipNumber" data-shipName="Cutlass" data-shipClassName="Cutlass" /></dd>
             <dt>Freelancer</dt>
             <dd><input type="number" id="FreelancerShipNumber" data-shipName="Freelancer" data-shipClassName="Freelancer"/></dd>
-            <dt>Redeemer</td>
-			<dd><input type="number" id="RedeemerShipNumber" data-shipName="Redeemer" data-shipClassName="Redeemer"/></dd>
             <dt>Constellation</dt>
             <dd><input type="number" id="ConstellationShipNumber" data-shipName="Constellation" data-shipClassName="Constellation"/></dd>
             <dt>Retaliator</dt>
             <dd><input type="number" id="RetaliatorShipNumber" data-shipName="Retaliator" data-shipClassName="Retaliator"/></dd>
-            
-			
-			<dt>Caterpillar</dt>
+            <dt>Caterpillar</dt>
             <dd><input type="number" id="CaterpillarShipNumber" data-shipName="Caterpillar" data-shipClassName="Caterpillar"/></dd>
-            
-            <dt>Merchantman</dt>
-            <dd><input type="number" id="MerchantmanShipNumber" data-shipname="Merchantman" data-shipclassname="Merchantman" /></dd>
-            
+
+            <dt>Hull A</dt>
+            <dd><input type="number" id="Hull-AShipNumber" data-shipname="Hull A" data-shipclassname="Hull-A" /></dd>
+            <dt>Hull B</dt>
+            <dd><input type="number" id="Hull-BShipNumber" data-shipname="Hull B" data-shipclassname="Hull-B" /></dd>
+            <dt>Hull C</dt>
+            <dd><input type="number" id="Hull-CShipNumber" data-shipname="Hull C" data-shipclassname="Hull-C" /></dd>
+            <dt>Hull D</dt>
+            <dd><input type="number" id="Hull-DShipNumber" data-shipname="Hull D" data-shipclassname="Hull-D" /></dd>
+            <dt>Hull E</dt>
+            <dd><input type="number" id="Hull-EShipNumber" data-shipname="Hull E" data-shipclassname="Hull-E" /></dd>
+
             <dt>Starfarer</dt>
             <dd><input type="number" id="StarfarerShipNumber" data-shipName="Starfarer" data-shipClassName="Starfarer"/></dd>
-            
+            <dt>890 Jump</dt>
+            <dd><input type="number" id="JumpShipNumber" data-shipname="890 Jump" data-shipclassname="Jump" /></dd>
+            <dt>Merchantman</dt>
+            <dd><input type="number" id="MerchantmanShipNumber" data-shipname="Merchantman" data-shipclassname="Merchantman" /></dd>
+            <dt>Carrack</td>
+            <dd><input type="number" id="CarrackShipNumber" data-shipName="Carrack" data-shipClassName="Carrack"/></dd>
             <dt>Reclaimer</dt>
             <dd><input type="number" id="ReclaimerShipNumber" data-shipname="Reclaimer" data-shipclassname="Reclaimer" /></dd>
-            
+            <dt>Orion</td>
+            <dd><input type="number" id="OrionShipNumber" data-shipName="Orion" data-shipClassName="Orion"/></dd>
+
             <dt>Idris</dt>
             <dd><input type="number" id="IdrisShipNumber" data-shipName="Idris" data-shipClassName="Idris"/></dd>
-            
-			
-			<dt>Carrack</td>
-			<dd><input type="number" id="CarrackShipNumber" data-shipName="Carrack" data-shipClassName="Carrack"/></dd>
-			
-			<dt>Javelin</td>
-			<dd><input type="number" id="JavelinShipNumber" data-shipName="Javelin" data-shipClassName="Javelin"/></dd>
-			
+            <dt>Javelin</td>
+            <dd><input type="number" id="JavelinShipNumber" data-shipName="Javelin" data-shipClassName="Javelin"/></dd>
         </dl>
         </fieldset>
         <fieldset class="fLeft"><legend>Optional Inputs</legend>
@@ -155,13 +164,13 @@
                     <option value="red">Red</option>
                     <option value="yellow">Yellow</option>
                     <option value="white">White</option>
-					<option value="transparent">Transparent</option>
+                    <option value="transparent">Transparent</option>
                 </select>
             </dd>
         </dl>
         </fieldset>
         <div class="clear">
-            <a href="#Top">
+            <a href="#">
                 <input type="button" value="Draw my Faction!" id="btnDrawFaction" /> <input type="button" onclick="shipDrawer.ClearShips();" value="Clear" />
             </a>
             <a id="DownloadImageLink" download="FactionShips.png" href="#">Download as Image</a>
