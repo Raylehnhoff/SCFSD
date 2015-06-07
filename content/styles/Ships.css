@@ -1,4 +1,4 @@
-.ShipName{width:190px;font-family:'Electrolize', Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;vertical-align:top;}
+﻿.ShipName{width:190px;font-family:'Electrolize', Arial;font-size:18px;font-weight:bold;padding-right:15px;text-align:right;vertical-align:top;}
 .ShipBox{margin:15px 0;}
 .Ship
 {
@@ -6,194 +6,137 @@
     display:inline-block;
     float:left;
 }
-.Aurora {
-    width: 62px;
-    height: 13px;
-    background-position: -5px -5px;
+.M50
+{
+    height:10px;
+    width:46px;
+    background-position:0 -10px;
 }
-
-.Avenger {
-    width: 67px;
-    height: 17px;
-    background-position: -77px -5px;
+.Aurora
+{
+    height:19px;
+    width:74px;
+    background-position: 0 -31px;
 }
-
-.Carrack {
-    width: 443px;
-    height: 112px;
-    background-position: -154px -5px;
+.Avenger
+{
+    height:21px;
+    width:72px;
+    background-position:0 -56px;
 }
-
-.Caterpillar {
-    width: 238px;
-    height: 29px;
-    background-position: -607px -5px;
+.Gladiator
+{
+    height:21px;
+    width:81px;
+    background-position:0 -85px;
 }
-
-.Constellation {
-    width: 204px;
-    height: 44px;
-    background-position: -855px -5px;
+.Hornet
+{
+    height:23px;
+    width:90px;
+    background-position:0 -108px;
 }
-
-.Cutlass {
-    width: 99px;
-    height: 22px;
-    background-position: -1069px -5px;
+.Scythe
+{
+    height:33px;
+    width:115px;
+    background-position:0 -135px;
 }
-
-.Freelancer {
-    width: 109px;
-    height: 23px;
-    background-position: -5px -37px;
+.s300Series
+{
+    height:25px;
+    width:100px;
+    background-position:0 -172px;
 }
-
-.Gladiator {
-    width: 80px;
-    height: 19px;
-    background-position: -1178px -5px;
+.Cutlass
+{
+    height:35px;
+    width:125px;
+    background-position:0 -210px;
 }
-
-.Gladius {
-    width: 67px;
-    height: 17px;
-    background-position: -1178px -34px;
+.Freelancer
+{
+    height:32px;
+    width:130px;
+    background-position:0 -241px;
 }
-
-.Herald {
-    width: 77px;
-    height: 31px;
-    background-position: -607px -61px;
+.Constellation
+{
+    height:55px;
+    width:216px;
+    background-position:0 -281px;
 }
-
-.Hornet {
-    width: 75px;
-    height: 16px;
-    background-position: -694px -61px;
+.Retaliator
+{
+    height:40px;
+    width:255px;
+    background-position:0 -346px;
 }
-
-.Hull-A {
-    width: 73px;
-    height: 14px;
-    background-position: -779px -61px;
+.Caterpillar
+{
+    height:35px;
+    width:280px;
+    background-position:0 -400px;
 }
-
-.Hull-B {
-    width: 166px;
-    height: 61px;
-    background-position: -862px -61px;
+.Starfarer
+{
+    height:90px;
+    width:355px;
+    background-position:0 -445px;
 }
-
-.Hull-C {
-    width: 352px;
-    height: 152px;
-    background-position: -5px -132px;
+.Idris
+{
+    height:110px;
+    width:500px;
+    background-position:0 -538px;
 }
-
-.Hull-D {
-    width: 703px;
-    height: 262px;
-    background-position: -367px -132px;
-}
-
-.Hull-E {
-    width: 1250px;
-    height: 385px;
-    background-position: -5px -399px;
-}
-
-.Idris {
-    width: 814px;
-    height: 168px;
-    background-position: -5px -789px;
-}
-
-.Javelin {
-    width: 1150px;
-    height: 244px;
-    background-position: -5px -967px;
-}
-
-.Jump {
-    width: 410px;
-    height: 69px;
-    background-position: -829px -789px;
-}
-
-.Khartu {
-    width: 29px;
-    height: 80px;
-    background-position: -1080px -61px;
-}
-
-.M50 {
-    width: 37px;
-    height: 8px;
-    background-position: -1119px -61px;
-}
-
 .Merchantman {
-    width: 333px;
-    height: 161px;
-    background-position: -1268px -5px;
+    height:181px;
+    width:265px;
+    background-position:0 -648px;
 }
-
 .Mustang {
-    width: 61px;
-    height: 19px;
-    background-position: -1080px -176px;
+    height: 23px;
+    width: 65px;
+    background-position: -19px -848px;
 }
-
-.Orion {
-    width: 569px;
-    height: 173px;
-    background-position: -5px -1221px;
-}
-
-.Reclaimer {
-    width: 531px;
-    height: 167px;
-    background-position: -1080px -205px;
-}
-
-.Redeemer {
-    width: 125px;
-    height: 34px;
-    background-position: -1265px -382px;
-}
-
-.Reliant {
-    width: 51px;
-    height: 97px;
-    background-position: -1400px -382px;
-}
-
-.Retaliator {
-    width: 237px;
-    height: 42px;
-    background-position: -1265px -489px;
-}
-
-.Scythe {
-    width: 103px;
-    height: 24px;
-    background-position: -1461px -382px;
-}
-
-.Starfarer {
-    width: 300px;
-    height: 75px;
-    background-position: -1265px -541px;
-}
-
-.Vanguard {
-    width: 128px;
+.XianScout {
     height: 29px;
-    background-position: -1461px -416px;
+    width: 110px;
+    background-position: -19px -884px;
+}
+.Gladius {
+    height: 38px;
+    width: 110px;
+    background-position: -19px -926px;
+}
+.Reclaimer {
+    height: 143px;
+    width: 460px;
+    background-position: -12px -974px;
 }
 
-.s300i {
-    width: 80px;
-    height: 18px;
-    background-position: -1151px -176px;
+.Herald{
+    height: 40px;
+    width: 105px;
+    background-position: -12px -1129px;
 }
+
+.Redeemer{
+    height: 65px;
+    width: 190px;
+    background-position: -12px -1177px;
+}
+
+.Carrack{
+    height: 135px;
+    width: 440px;
+    background-position: -12px -1251px;
+}
+
+.Javelin{
+    height: 110px;
+    width: 480px;
+    background-position: -12px -1388px;
+}
+
