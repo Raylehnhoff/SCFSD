@@ -6,6 +6,7 @@
     display:inline-block;
     float:left;
 }
+
 .Aurora {
     width: 62px;
     height: 13px;
@@ -45,97 +46,103 @@
 .Freelancer {
     width: 109px;
     height: 23px;
-    background-position: -5px -37px;
+    background-position: -1178px -5px;
+}
+
+.Genesis {
+    width: 283px;
+    height: 58px;
+    background-position: -607px -59px;
 }
 
 .Gladiator {
     width: 80px;
     height: 19px;
-    background-position: -1178px -5px;
+    background-position: -5px -38px;
 }
 
 .Gladius {
     width: 67px;
     height: 17px;
-    background-position: -1178px -34px;
+    background-position: -1069px -38px;
 }
 
 .Herald {
     width: 77px;
     height: 31px;
-    background-position: -607px -61px;
+    background-position: -1146px -38px;
 }
 
 .Hornet {
     width: 75px;
     height: 16px;
-    background-position: -694px -61px;
+    background-position: -5px -79px;
 }
 
 .Hull-A {
     width: 73px;
     height: 14px;
-    background-position: -779px -61px;
+    background-position: -900px -79px;
 }
 
 .Hull-B {
     width: 166px;
     height: 61px;
-    background-position: -862px -61px;
+    background-position: -983px -79px;
 }
 
 .Hull-C {
     width: 352px;
     height: 152px;
-    background-position: -5px -132px;
+    background-position: -5px -150px;
 }
 
 .Hull-D {
     width: 703px;
     height: 262px;
-    background-position: -367px -132px;
+    background-position: -367px -150px;
 }
 
 .Hull-E {
     width: 1250px;
     height: 385px;
-    background-position: -5px -399px;
+    background-position: -5px -422px;
 }
 
 .Idris {
     width: 814px;
     height: 168px;
-    background-position: -5px -789px;
+    background-position: -5px -817px;
 }
 
 .Javelin {
     width: 1150px;
     height: 244px;
-    background-position: -5px -967px;
+    background-position: -5px -995px;
 }
 
 .Jump {
     width: 410px;
     height: 69px;
-    background-position: -829px -789px;
+    background-position: -829px -817px;
 }
 
 .Khartu {
     width: 29px;
     height: 80px;
-    background-position: -1080px -61px;
+    background-position: -95px -38px;
 }
 
 .M50 {
     width: 37px;
     height: 8px;
-    background-position: -1119px -61px;
+    background-position: -1233px -38px;
 }
 
 .Merchantman {
     width: 333px;
     height: 161px;
-    background-position: -1268px -5px;
+    background-position: -1297px -5px;
 }
 
 .Mustang {
@@ -147,7 +154,7 @@
 .Orion {
     width: 569px;
     height: 173px;
-    background-position: -5px -1221px;
+    background-position: -5px -1249px;
 }
 
 .Reclaimer {
@@ -177,7 +184,7 @@
 .Scythe {
     width: 103px;
     height: 24px;
-    background-position: -1461px -382px;
+    background-position: -5px -382px;
 }
 
 .Starfarer {
@@ -189,7 +196,7 @@
 .Vanguard {
     width: 128px;
     height: 29px;
-    background-position: -1461px -416px;
+    background-position: -118px -382px;
 }
 
 .s300i {
