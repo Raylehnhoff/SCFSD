@@ -13,3 +13,6 @@
     * New hornet asset
 * Stankafucile
 	* New assets for Mustang, Xi'an, Gladius, and the reclaimer
+* Loganbacca <wookieemanlogan@hotmail.com>
+	* Ship sprite overhaul
+	* SVG ship sprite assets
