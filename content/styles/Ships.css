@@ -62,8 +62,8 @@
 }
 
 .Gladiator {
-    width: 80px;
-    height: 19px;
+    width: 72px;
+    height: 17px;
     background-position: -5px -38px;
 }
 
@@ -73,140 +73,146 @@
     background-position: -298px -138px;
 }
 
+.Glaive {
+    width: 103px;
+    height: 24px;
+    background-position: -375px -138px;
+}
+
 .Herald {
     width: 77px;
     height: 31px;
-    background-position: -375px -138px;
+    background-position: -488px -138px;
 }
 
 .Hornet {
     width: 75px;
     height: 16px;
-    background-position: -462px -138px;
+    background-position: -575px -138px;
 }
 
 .Hull-A {
     width: 73px;
     height: 14px;
-    background-position: -547px -138px;
+    background-position: -660px -138px;
 }
 
 .Hull-B {
     width: 166px;
     height: 61px;
-    background-position: -630px -138px;
+    background-position: -743px -138px;
 }
 
 .Hull-C {
     width: 352px;
     height: 152px;
-    background-position: -806px -138px;
+    background-position: -919px -138px;
 }
 
 .Hull-D {
     width: 703px;
     height: 262px;
-    background-position: -5px -209px;
+    background-position: -5px -300px;
 }
 
 .Hull-E {
     width: 1250px;
     height: 385px;
-    background-position: -5px -481px;
+    background-position: -5px -572px;
 }
 
 .Idris {
     width: 814px;
     height: 168px;
-    background-position: -5px -876px;
+    background-position: -5px -967px;
 }
 
 .Javelin {
     width: 1150px;
     height: 244px;
-    background-position: -5px -1054px;
+    background-position: -1297px -5px;
 }
 
 .Jump {
     width: 410px;
     height: 69px;
-    background-position: -718px -300px;
+    background-position: -1281px -259px;
 }
 
 .Khartu {
     width: 29px;
     height: 80px;
-    background-position: -95px -38px;
+    background-position: -718px -259px;
 }
 
 .M50 {
     width: 37px;
     height: 8px;
-    background-position: -1069px -38px;
+    background-position: -5px -259px;
 }
 
 .Merchantman {
     width: 333px;
     height: 161px;
-    background-position: -829px -876px;
+    background-position: -1701px -259px;
 }
 
 .Mustang {
     width: 61px;
     height: 19px;
-    background-position: -1168px -138px;
+    background-position: -52px -259px;
 }
 
 .Orion {
     width: 569px;
     height: 173px;
-    background-position: -1297px -5px;
+    background-position: -1265px -430px;
 }
 
 .Reclaimer {
     width: 531px;
     height: 167px;
-    background-position: -1168px -188px;
+    background-position: -1844px -430px;
 }
 
 .Redeemer {
     width: 125px;
     height: 34px;
-    background-position: -1709px -188px;
+    background-position: -757px -259px;
 }
 
 .Reliant {
     width: 51px;
     height: 97px;
-    background-position: -1709px -232px;
+    background-position: -2044px -259px;
 }
 
 .Retaliator {
     width: 237px;
     height: 42px;
-    background-position: -1138px -365px;
+    background-position: -2105px -259px;
 }
 
 .Scythe {
     width: 103px;
     height: 24px;
-    background-position: -1770px -232px;
+    background-position: -123px -259px;
 }
 
 .Starfarer {
     width: 300px;
     height: 75px;
-    background-position: -1385px -365px;
+    background-position: -757px -311px;
 }
 
 .Vanguard {
     width: 128px;
     height: 29px;
-    background-position: -1709px -339px;
+    background-position: -236px -259px;
 }
 
 .s300i {
     width: 80px;
     height: 18px;
-    background-position: -1770px -266px;
+    background-position: -374px -259px;
 }
