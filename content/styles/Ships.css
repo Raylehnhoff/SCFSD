@@ -157,10 +157,16 @@
     background-position: -1701px -259px;
 }
 
+.Merlin {
+    width: 40px;
+    height: 8px;
+    background-position: -52px -259px;
+}
+
 .Mustang {
     width: 61px;
     height: 19px;
-    background-position: -52px -259px;
+    background-position: -102px -259px;
 }
 
 .Orion {
@@ -196,7 +202,7 @@
 .Scythe {
     width: 103px;
     height: 24px;
-    background-position: -123px -259px;
+    background-position: -173px -259px;
 }
 
 .Starfarer {
@@ -208,11 +214,11 @@
 .Vanguard {
     width: 128px;
     height: 29px;
-    background-position: -236px -259px;
+    background-position: -286px -259px;
 }
 
 .s300i {
     width: 80px;
     height: 18px;
-    background-position: -374px -259px;
+    background-position: -424px -259px;
 }
