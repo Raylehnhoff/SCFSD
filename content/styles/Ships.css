@@ -199,10 +199,16 @@
     background-position: -2105px -259px;
 }
 
+.Sabre {
+    width: 87px;
+    height: 16px;
+    background-position: -173px -259px;
+}
+
 .Scythe {
     width: 103px;
     height: 24px;
-    background-position: -173px -259px;
+    background-position: -270px -259px;
 }
 
 .Starfarer {
@@ -214,11 +220,11 @@
 .Vanguard {
     width: 128px;
     height: 29px;
-    background-position: -286px -259px;
+    background-position: -383px -259px;
 }
 
 .s300i {
     width: 80px;
     height: 18px;
-    background-position: -424px -259px;
+    background-position: -521px -259px;
 }
