@@ -1,0 +1,44 @@
+﻿(function(SCFSD) {
+    SCFSD.Static = SCFSD.Static || {};
+    SCFSD.Static.loadShips = function() {
+        var shipArray = [];
+        shipArray.push(new SCFSD.Ship("Aurora"));
+        shipArray.push(new SCFSD.Ship("Mustang"));
+        shipArray.push(new SCFSD.Ship("Reliant"));
+        shipArray.push(new SCFSD.Ship("Avenger"));
+        shipArray.push(new SCFSD.Ship("Gladius"));
+        shipArray.push(new SCFSD.Ship("Merlin"));
+        shipArray.push(new SCFSD.Ship("M50"));
+        shipArray.push(new SCFSD.Ship("300 Series", "s300i"));
+        shipArray.push(new SCFSD.Ship("Herald"));
+        shipArray.push(new SCFSD.Ship("Hornet"));
+        shipArray.push(new SCFSD.Ship("Gladiator"));
+        shipArray.push(new SCFSD.Ship("Sabre"));
+        shipArray.push(new SCFSD.Ship("Vanguard"));
+        shipArray.push(new SCFSD.Ship("Khartu"));
+        shipArray.push(new SCFSD.Ship("Scythe"));
+        shipArray.push(new SCFSD.Ship("Glaive"));
+        shipArray.push(new SCFSD.Ship("Redeemer"));
+        shipArray.push(new SCFSD.Ship("Cutlass"));
+        shipArray.push(new SCFSD.Ship("Freelancer"));
+        shipArray.push(new SCFSD.Ship("Constellation"));
+        shipArray.push(new SCFSD.Ship("Retaliator"));
+        shipArray.push(new SCFSD.Ship("Caterpillar"));
+        shipArray.push(new SCFSD.Ship("Hull A", "Hull-A"));
+        shipArray.push(new SCFSD.Ship("Hull B", "Hull-B"));
+        shipArray.push(new SCFSD.Ship("Hull C", "Hull-C"));
+        shipArray.push(new SCFSD.Ship("Hull D", "Hull-D"));
+        shipArray.push(new SCFSD.Ship("Hull E", "Hull-E"));
+        shipArray.push(new SCFSD.Ship("Starfarer"));
+        shipArray.push(new SCFSD.Ship("Genesis"));
+        shipArray.push(new SCFSD.Ship("890 Jump", "Jump"));
+        shipArray.push(new SCFSD.Ship("Merchantman"));
+        shipArray.push(new SCFSD.Ship("Carrack"));
+        shipArray.push(new SCFSD.Ship("Endeavor"));
+        shipArray.push(new SCFSD.Ship("Reclaimer"));
+        shipArray.push(new SCFSD.Ship("Orion"));
+        shipArray.push(new SCFSD.Ship("Idris"));
+        shipArray.push(new SCFSD.Ship("Javelin"));
+        return shipArray;
+    }
+})(SCFSD = SCFSD || {});

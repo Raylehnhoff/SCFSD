@@ -1,4 +1,20 @@
-﻿var SCFSD = function () {
+﻿var pageModel;
+$(document).ready(function () {
+    pageModel = new SCFSD.PageVM();
+    ko.applyBindings(pageModel, $("#Top")[0]);
+});
+(function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-42538014-1', 'auto');
+ga('send', 'pageview');
+
+/*
+var SCFSD = function () {
     "use strict";
     this.cssOverrides = [];
 };
@@ -183,3 +199,4 @@ $(document).ready(function () {
     shipDrawer = new SCFSD();
     shipDrawer.init();
 });
+*/
