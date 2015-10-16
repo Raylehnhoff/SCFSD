@@ -104,7 +104,12 @@
                                     <tbody data-bind="foreach:Ships">
                                         <!-- ko if: shipCount() > 0-->
                                         <tr class="ShipBox" data-bind="attr:{'id':className}">
-                                            <td class="ShipName" data-bind="text:shipName"></td>
+                                            <td class="ShipName">
+                                                <span data-bind="text:shipName"></span>
+                                                <!-- ko if: $parent.OptionalSettings.ShowShipCount() -->
+                                                <br/><span data-bind="text:'(' + shipCount() +')'"></span>
+                                                <!-- /ko -->
+                                            </td>
                                             <td class="ShipContainer">
                                                 <!-- ko foreach: shipOutput -->
                                                 <div data-bind="attr:{'class':'Ship ' + className}"></div>
