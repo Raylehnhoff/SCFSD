@@ -89,8 +89,8 @@
                                 <form>
                                     <div data-bind="foreach:Ships">
                                         <div class="form-group">
-                                            <label data-bind="attr:{'for':shipName}, text:shipName"></label>
-                                            <input type="number" class="form-control" data-bind="attr:{'id':shipName + 'ShipNumber'}, value:shipCount" />
+                                            <label data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
+                                            <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
                                         </div>
                                     </div>
                                 </form>
