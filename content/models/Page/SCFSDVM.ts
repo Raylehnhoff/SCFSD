@@ -8,8 +8,10 @@ module SCFSD {
         HasAnyShips: KnockoutComputed<boolean>;
         OptionalSettings: OptionalSettings;
         ShipTimeout: number;
-        ImageString: string;
+        Canvas: KnockoutObservable<any>;
         IsDownloadReady: KnockoutObservable<boolean>;
+        static SVGCache = {};
+
         constructor() {
             var self = this;
             this.ShipTimeout = 0;
@@ -21,13 +23,15 @@ module SCFSD {
                 }).length > 0;
             });
             this.IsDownloadReady = ko.observable<boolean>(false);
-            ko.postbox.subscribe("RedrawShips", function (newValue: Ship) {
+            ko.postbox.subscribe("RedrawShips", (newValue?: Ship) => {
                 self.RedrawShips();
-                self.SaveToLocalStorage(newValue);
+                if (newValue) {
+                    self.SaveToLocalStorage(newValue);
+                }
             });
 
             this.OptionalSettings = new OptionalSettings();
-            this.ImageString = "";
+            this.Canvas = ko.observable<any>();
         }
 
         SaveToLocalStorage(ship: Ship) {
@@ -35,27 +39,92 @@ module SCFSD {
             localStorage[localStorageKey] = ship.shipCount();
         }
 
-        RedrawShips() {
+        RedrawShips(saveAfterRedraw?:boolean) {
             var self = this;
             if ($(".nav li.active a").attr('href') === '#panelSetup') {
                 if (self.ShipTimeout) {
                     clearTimeout(self.ShipTimeout);
                 }
                 self.IsDownloadReady(false);
+
                 self.ShipTimeout = setTimeout(() => {
+                    self.IsDownloadReady(false);
+                    self.convertImagesToSVG();
                     var elem = $('#ShipOutput')[0];
                     html2canvas(elem, {
-                        background: self.OptionalSettings.selectedBackgroundColor().Value,
-                        onrendered: (canvas) => {
-                            if (!(canvas.height === 0 || canvas.width === 0)) {
-                                var strData = $(Canvas2Image.convertToImage(canvas)).attr('src');
-                                self.ImageString = strData;
-                                self.IsDownloadReady(true);
-                            }
+                        useCORS: true
+                    }).then(function (canvas) {
+                        self.Canvas(canvas);
+                        self.IsDownloadReady(true);
+                        if (saveAfterRedraw) {
+                            self.SaveImage();
                         }
                     });
                 }, 400);
             }
+        }
+
+        SaveImage() {
+            var self = this;
+            if ($(".nav li.active a").attr('href') != '#panelSetup') {
+                $("a[href='#panelSetup']").tab('show');
+                self.RedrawShips(true);
+            }
+            else {
+                if (navigator.msSaveBlob) {
+                    var BlobBuilder = window.MSBlobBuilder;
+                    navigator.saveBlob = navigator.msSaveBlob;
+                    var imgBlob = self.Canvas().msToBlob();
+                    if (BlobBuilder && navigator.saveBlob) {
+                        var showSave = function (data, name, mimetype) {
+                            var builder = new BlobBuilder();
+                            builder.append(data);
+                            var blob = builder.getBlob(mimetype || "application/octet-stream");
+                            if (!name)
+                                name = "fleet.png";
+                            navigator.saveBlob(blob, name);
+                        };
+                        showSave(imgBlob, 'fleet.png', "image/png");
+                    }
+                } else {
+                    if ($('#export-image-container').length == 0)
+                        $('body').append('<a id="export-image-container" download="fleet.png">');
+                    var img = self.Canvas().toDataURL("image/png");
+
+                    $('#export-image-container').attr('href', img);
+                    $('#export-image-container')[0].click();
+                    $('#export-image-container').remove();
+                }
+            }
+        }
+
+        convertImagesToSVG() {
+            $('img.svg').each(function () {
+                var $img = $(this);
+                var imgClass = $img.attr('class');
+                var imgURL = $img.attr('src');
+                var cache = SCFSD.PageVM.SVGCache[imgURL];
+                if (!cache) {
+                    $.get(imgURL, function (data) {
+                        // Get the SVG tag, ignore the rest
+                        var $svg = $(data).find('svg');
+
+                        // Add replaced image's classes to the new SVG
+                        if (typeof imgClass !== 'undefined') {
+                            $svg = $svg.attr('class', imgClass + ' replaced-svg');
+                        }
+
+                        // Remove any invalid XML tags as per http://validator.w3.org
+                        $svg = $svg.removeAttr('xmlns:a');
+                        SCFSD.PageVM.SVGCache[imgURL] = $svg;
+                        // Replace image with new SVG
+                        $img.replaceWith($svg);
+
+                    }, 'xml');
+                } else {
+                    $img.replaceWith($(cache).clone());
+                }
+            });
         }
 
         init() {
@@ -63,20 +132,6 @@ module SCFSD {
             this.Ships(SCFSD.Static.loadShips());
             this.checkLocalStorage();
 
-        }
-
-        LaunchThing() {
-            var self = this;
-            if ($(".nav li.active a").attr('href') != '#panelSetup') {
-                $("a[href='#panelSetup']").tab('show');
-                self.IsDownloadReady(false);
-                self.RedrawShips();
-            } else {
-                setTimeout(function() {
-                    var w = window.open();
-                    $(w.document.body).html("<img src='" + self.ImageString + "' />");
-                });
-            }
         }
 
         checkLocalStorage() {

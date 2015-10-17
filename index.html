@@ -2,21 +2,25 @@
 <html>
 <head>
     <title>Star Citizen Faction Poster Maker</title>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/css?family=Electrolize" media="all" rel="Stylesheet">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <link href="content/styles/Styles.css" media="all" type="text/css" rel="Stylesheet" />
     <link href="content/styles/Ships.css?v=27062015" media="all" type="text/css" rel="Stylesheet" />
     <meta name="description" content="Star Citizen Faction Poster Maker" />
+    <script language="javascript" type="text/javascript" src="content/ThirdParty/ColorPicker/colorPicker.min.js"></script>
+    <link rel="stylesheet" href="content/ThirdParty/ColorPicker/colorPicker.css" type="text/css" />
     <script type="text/javascript" src="content/ThirdParty/html2canvas.js"></script>
+    <script type="text/javascript" src="content/ThirdParty/html2canvas.svg.js"></script>
     <script type="text/javascript" src="content/ThirdParty/canvas2image.js"></script>
     <script type="text/javascript" src="content/ThirdParty/Modernizr.js"></script>
     <script type="text/javascript" src="content/ThirdParty/Knockout/knockout-3.3.0.js"></script>
+    <script type="text/javascript" src="content/scripts/site.js"></script>
     <script type="text/javascript" src="content/ThirdParty/knockout-postbox.js"></script>
     <script type="text/javascript" src="content/models/Data/OptionalSettings.js"></script>
     <script type="text/javascript" src="content/models/Data/Ship.js"></script>
     <script type="text/javascript" src="content/models/Page/SCFSDVM.js"></script>
     <script type="text/javascript" src="content/scripts/Static.js"></script>
-    
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="content/ThirdParty/Bootstrap/css/bootstrap.min.css">
 
@@ -48,6 +52,8 @@
             document.onscroll = scroll;
 
         });
+
+        
     </script>
 </head>
 <body id="Top">
@@ -78,8 +84,13 @@
                             <a href="#panelOptional" data-toggle="tab">Optional Inputs</a>
                         </li>
                         <li data-bind="visible:HasAnyShips, css:{disabled:!IsDownloadReady()}">
-                            <a href="#" data-bind="click:LaunchThing">
+                            <a href="#" data-bind="click:SaveImage">
                                 <i class="glyphicon glyphicon-download-alt"></i> Download
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-bind="click:RedrawShips">
+                                <i class="glyphicon glyphicon-refresh"></i> Force Redraw
                             </a>
                         </li>
                     </ul>
@@ -107,12 +118,12 @@
                                             <td class="ShipName">
                                                 <span data-bind="text:shipName"></span>
                                                 <!-- ko if: $parent.OptionalSettings.ShowShipCount() -->
-                                                <br/><span data-bind="text:'(' + shipCount() +')'"></span>
+                                                <br /><span data-bind="text:'(' + shipCount() +')'"></span>
                                                 <!-- /ko -->
                                             </td>
-                                            <td class="ShipContainer">
+                                            <td class="ShipContainer" data-bind="attr:{id:'container-'+className}">
                                                 <!-- ko foreach: shipOutput -->
-                                                <div data-bind="attr:{'class':'Ship ' + className}"></div>
+                                                <img class="Ship svg" data-bind="attr:{src:'assets/ships/'+className+'.svg'}" />
                                                 <!-- /ko-->
                                             </td>
 
@@ -135,24 +146,6 @@
                                         </label>
                                     </div>
                                     <div class="form-group">
-                                        <label for="LogoPosition">Logo Position</label>
-                                        <select id="LogoPosition" class="form-control" data-bind="selected:LogoPosition">
-                                            <option value="None">None</option>
-                                            <option value="Left">Left</option>
-                                            <option value="Middle">Middle</option>
-                                            <option value="Right">Right</option>
-                                        </select>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Logo Width</label>
-                                        <input type="number" id="LogoWidth" class="form-control" data-bind="value:LogoWidth" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Logo Height</label>
-                                        <input type="number" id="LogoHeight" class="form-control" data-bind="value:LogoHeight" />
-                                    </div>
-                                    <div class="form-group">
                                         <label>Ship Margin (Right)</label>
                                         <input type="number" id="ShipMarginRight" class="form-control" data-bind="value:ShipMarginRight" />
                                     </div>
@@ -162,22 +155,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="ShipColors">Ship Colors</label>
-                                        <select id="ShipColors" class="form-control" data-bind="options: ShipColorOptions, optionsText: 'Text', value: selectedShipColor">
-                                        </select>
+                                        <input type="text" data-bind="jqColorPicker: selectedShipColor, colorPickerOptions: { value:selectedShipColor }" />
+                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="BackgroundColor">Background Color</label>
-                                        <select id="BackgroundColor" class="form-control" data-bind="options: BackgroundColorOptions, optionsText: 'Text', value: selectedBackgroundColor">
-                                        </select>
+                                        <input type="text" data-bind="jqColorPicker: selectedBackgroundColor, colorPickerOptions: { value:selectedBackgroundColor }" />
                                     </div>
                                     <div class="form-group">
                                         <label for="FontColor">Font Color</label>
-                                        <select id="FontColor" class="form-control" data-bind="options: FontColorOptions, optionsText: 'Text', value: selectedFontColor">
-                                        </select>
+                                        <input type="text" data-bind="jqColorPicker: selectedFontColor, colorPickerOptions: { value:selectedFontColor }" />
                                     </div>
                                 </form>
                                 <style type="text/css" id="overrideStyles" data-bind="text:ComputedStyles">
-
                                 </style>
                             </div>
                         </div>
