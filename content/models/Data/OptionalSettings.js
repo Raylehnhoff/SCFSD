@@ -11,7 +11,6 @@ var SCFSD;
             this.selectedShipColor = ko.observable('#000000').extend({ notify: 'always' });
             this.selectedShipColor.subscribe(function (newVal) {
                 $("#ShipOutput path").attr('style', 'fill:' + newVal);
-                ko.postbox.publish("RedrawShips", null);
             });
             this.ComputedStyles = ko.computed(function () {
                 var array = [];

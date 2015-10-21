@@ -20,7 +20,7 @@ var SCFSD;
                 return fragments;
             }).extend({ notify: 'always' });
             this.shipCount.subscribe(function (newValue) {
-                ko.postbox.publish("RedrawShips", _this);
+                ko.postbox.publish("SaveShips", _this);
             });
         }
         return Ship;

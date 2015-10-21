@@ -22,7 +22,7 @@ module SCFSD {
             }).extend({notify:'always'});
 
             this.shipCount.subscribe((newValue) => {
-                ko.postbox.publish("RedrawShips", this);
+                ko.postbox.publish("SaveShips", this);
             });
         }
     }
