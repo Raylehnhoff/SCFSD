@@ -29,6 +29,12 @@ module SCFSD {
                 }
             });
 
+            ko.postbox.subscribe("ForceRedraw", (newVal) => {
+                console.log("ForceRedraw Called");
+                self.RedrawShips(false);
+                $("#ShipOutput path").attr('style', 'fill:' + newVal);
+            });
+
             this.OptionalSettings = new OptionalSettings();
             this.Canvas = ko.observable<any>();
         }

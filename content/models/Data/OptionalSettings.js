@@ -10,7 +10,7 @@ var SCFSD;
             this.selectedFontColor = ko.observable('#000000');
             this.selectedShipColor = ko.observable('#000000').extend({ notify: 'always' });
             this.selectedShipColor.subscribe(function (newVal) {
-                $("#ShipOutput path").attr('style', 'fill:' + newVal);
+                ko.postbox.publish("ForceRedraw", newVal);
             });
             this.ComputedStyles = ko.computed(function () {
                 var array = [];

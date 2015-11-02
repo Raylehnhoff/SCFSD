@@ -21,6 +21,11 @@ var SCFSD;
                     self.SaveToLocalStorage(newValue);
                 }
             });
+            ko.postbox.subscribe("ForceRedraw", function (newVal) {
+                console.log("ForceRedraw Called");
+                self.RedrawShips(false);
+                $("#ShipOutput path").attr('style', 'fill:' + newVal);
+            });
             this.OptionalSettings = new SCFSD.OptionalSettings();
             this.Canvas = ko.observable();
         }

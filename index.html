@@ -8,7 +8,7 @@
     <link href="content/styles/Styles.css" media="all" type="text/css" rel="Stylesheet" />
     <link href="content/styles/Ships.css?v=27062015" media="all" type="text/css" rel="Stylesheet" />
     <meta name="description" content="Star Citizen Faction Poster Maker" />
-    <script language="javascript" type="text/javascript" src="content/ThirdParty/ColorPicker/colorPicker.min.js"></script>
+    <script language="javascript" type="text/javascript" src="content/ThirdParty/ColorPicker/jquery.colorPicker.js"></script>
     <link rel="stylesheet" href="content/ThirdParty/ColorPicker/colorPicker.css" type="text/css" />
     <script type="text/javascript" src="content/ThirdParty/html2canvas.js"></script>
     <script type="text/javascript" src="content/ThirdParty/html2canvas.svg.js"></script>
@@ -89,11 +89,6 @@
                                 <i class="glyphicon glyphicon-download-alt"></i> Download
                             </a>
                         </li>
-                        <li>
-                            <a href="#" data-bind="click:RedrawShips">
-                                <i class="glyphicon glyphicon-refresh"></i> Force Redraw
-                            </a>
-                        </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="panelSetup">
@@ -101,8 +96,8 @@
                                 <form>
                                     <div data-bind="foreach:Ships">
                                         <div class="form-group">
-                                            <label data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
-                                            <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
+											<label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
+											<input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
                                         </div>
                                     </div>
                                 </form>
