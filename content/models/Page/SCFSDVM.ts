@@ -39,6 +39,15 @@ module SCFSD {
             this.Canvas = ko.observable<any>();
         }
 
+        Reset() {
+            var self = this;
+            for (var i = 0; i < self.Ships().length; i++) {
+                var ship = self.Ships()[i];
+                ship.shipCount(null);
+                self.SaveToLocalStorage(ship);
+            }
+        }
+
         SaveToLocalStorage(ship: Ship) {
             var localStorageKey = ship.className + "ShipNumber";
             localStorage[localStorageKey] = ship.shipCount();

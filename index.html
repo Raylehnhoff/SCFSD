@@ -89,6 +89,11 @@
                                 <i class="glyphicon glyphicon-download-alt"></i> Download
                             </a>
                         </li>
+						<li data-bind="visible:HasAnyShips">
+							<a href="#" data-bind="click:Reset">
+								<i class="glyphicon glyphicon-refresh"></i> Reset
+							</a>
+						</li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="panelSetup">

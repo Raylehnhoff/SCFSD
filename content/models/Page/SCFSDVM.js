@@ -29,6 +29,14 @@ var SCFSD;
             this.OptionalSettings = new SCFSD.OptionalSettings();
             this.Canvas = ko.observable();
         }
+        PageVM.prototype.Reset = function () {
+            var self = this;
+            for (var i = 0; i < self.Ships().length; i++) {
+                var ship = self.Ships()[i];
+                ship.shipCount(null);
+                self.SaveToLocalStorage(ship);
+            }
+        };
         PageVM.prototype.SaveToLocalStorage = function (ship) {
             var localStorageKey = ship.className + "ShipNumber";
             localStorage[localStorageKey] = ship.shipCount();
