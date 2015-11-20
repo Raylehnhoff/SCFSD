@@ -8,6 +8,7 @@
         shipArray.push(new SCFSD.Ship("Avenger"));
         shipArray.push(new SCFSD.Ship("Gladius"));
         shipArray.push(new SCFSD.Ship("Merlin"));
+        shipArray.push(new SCFSD.Ship("Archimedes"));
         shipArray.push(new SCFSD.Ship("85X"));
         shipArray.push(new SCFSD.Ship("M50"));
         shipArray.push(new SCFSD.Ship("300 Series", "s300i"));
@@ -30,6 +31,7 @@
         shipArray.push(new SCFSD.Ship("Hull C", "Hull-C"));
         shipArray.push(new SCFSD.Ship("Hull D", "Hull-D"));
         shipArray.push(new SCFSD.Ship("Hull E", "Hull-E"));
+        shipArray.push(new SCFSD.Ship("Crucible"));
         shipArray.push(new SCFSD.Ship("Starfarer"));
         shipArray.push(new SCFSD.Ship("Genesis"));
         shipArray.push(new SCFSD.Ship("890 Jump", "Jump"));
