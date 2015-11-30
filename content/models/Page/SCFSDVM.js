@@ -18,6 +18,11 @@ var SCFSD;
             this.IsDownloadReady = ko.observable(false);
             ko.postbox.subscribe("SaveShips", function (newValue) {
                 if (newValue) {
+                    if (newValue.shipCount() > 2000) {
+                        if (confirm("It's very possible that you have entered a value that may cause your browser to freeze. Would you like us to reset this value to 0?")) {
+                            newValue.shipCount(0);
+                        }
+                    }
                     self.SaveToLocalStorage(newValue);
                 }
             });
