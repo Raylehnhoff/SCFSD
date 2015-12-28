@@ -6,6 +6,7 @@ var SCFSD;
             this.ShowShipCount = ko.observable(false);
             this.ShipMarginRight = ko.observable(0);
             this.ShipMarginBottom = ko.observable(10);
+            this.TransparentBackgroundColor = ko.observable(false);
             this.selectedBackgroundColor = ko.observable('#EEEEEE');
             this.selectedFontColor = ko.observable('#000000');
             this.selectedShipColor = ko.observable('#000000').extend({ notify: 'always' });
@@ -25,7 +26,12 @@ var SCFSD;
                 else {
                     array.push(".Ship{margin-bottom:10px;}");
                 }
-                array.push("#ShipOutput{background-color:" + self.selectedBackgroundColor() + " !important;}");
+                if (self.TransparentBackgroundColor()) {
+                    array.push("#ShipOutput{background-color:transparent !important;}");
+                }
+                else {
+                    array.push("#ShipOutput{background-color:" + self.selectedBackgroundColor() + " !important;}");
+                }
                 array.push("#ShipOutput{color:" + self.selectedFontColor() + " !important;}");
                 ko.postbox.publish("RedrawShips", null);
                 return array.join('');

@@ -159,11 +159,14 @@
                                     <div class="form-group">
                                         <label for="ShipColors">Ship Colors</label>
                                         <input type="text" data-bind="jqColorPicker: selectedShipColor, colorPickerOptions: { value:selectedShipColor }" />
-                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="BackgroundColor">Background Color</label>
                                         <input type="text" data-bind="jqColorPicker: selectedBackgroundColor, colorPickerOptions: { value:selectedBackgroundColor }" />
+
+                                        <label for="TransparentCB">
+                                            <input type="checkbox" data-bind="checked:TransparentBackgroundColor" /> Transparent
+                                        </label>
                                     </div>
                                     <div class="form-group">
                                         <label for="FontColor">Font Color</label>
