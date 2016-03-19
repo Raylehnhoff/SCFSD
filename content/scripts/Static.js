@@ -18,6 +18,7 @@
         shipArray.push(new SCFSD.Ship("Sabre"));
         shipArray.push(new SCFSD.Ship("Vanguard"));
         shipArray.push(new SCFSD.Ship("Khartu"));
+        shipArray.push(new SCFSD.Ship("Blade"));
         shipArray.push(new SCFSD.Ship("Scythe"));
         shipArray.push(new SCFSD.Ship("Glaive"));
         shipArray.push(new SCFSD.Ship("Redeemer"));
