@@ -23,6 +23,7 @@
         shipArray.push(new SCFSD.Ship("Glaive"));
         shipArray.push(new SCFSD.Ship("Redeemer"));
         shipArray.push(new SCFSD.Ship("Cutlass"));
+        shipArray.push(new SCFSD.Ship("Prospector"));
         shipArray.push(new SCFSD.Ship("Freelancer"));
         shipArray.push(new SCFSD.Ship("Constellation"));
         shipArray.push(new SCFSD.Ship("Retaliator"));
