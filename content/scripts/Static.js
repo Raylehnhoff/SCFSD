@@ -24,6 +24,7 @@
         shipArray.push(new SCFSD.Ship("Scythe"));
         shipArray.push(new SCFSD.Ship("Glaive"));
         shipArray.push(new SCFSD.Ship("Redeemer"));
+        shipArray.push(new SCFSD.Ship("Terrapin"));
         shipArray.push(new SCFSD.Ship("Cutlass"));
         shipArray.push(new SCFSD.Ship("Prospector"));
         shipArray.push(new SCFSD.Ship("Freelancer"));
