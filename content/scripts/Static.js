@@ -7,6 +7,7 @@
         shipArray.push(new SCFSD.Ship("Reliant"));
         shipArray.push(new SCFSD.Ship("Avenger"));
         shipArray.push(new SCFSD.Ship("Gladius"));
+        shipArray.push(new SCFSD.Ship("Argo"));
         shipArray.push(new SCFSD.Ship("Merlin"));
         shipArray.push(new SCFSD.Ship("Archimedes"));
         shipArray.push(new SCFSD.Ship("85X"));
