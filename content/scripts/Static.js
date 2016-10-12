@@ -46,6 +46,7 @@
         shipArray.push(new SCFSD.Ship("Endeavor"));
         shipArray.push(new SCFSD.Ship("Reclaimer"));
         shipArray.push(new SCFSD.Ship("Orion"));
+        shipArray.push(new SCFSD.Ship("Polaris"));
         shipArray.push(new SCFSD.Ship("Idris"));
         shipArray.push(new SCFSD.Ship("Javelin"));
         return shipArray;
