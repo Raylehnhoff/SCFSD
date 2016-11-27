@@ -85,30 +85,13 @@ module SCFSD {
 
         SaveImage() {
             var self = this;
-            if (navigator.msSaveBlob) {
-                var BlobBuilder = window.MSBlobBuilder;
-                navigator.saveBlob = navigator.msSaveBlob;
-                var imgBlob = self.Canvas().msToBlob();
-                if (BlobBuilder && navigator.saveBlob) {
-                    var showSave = function (data, name, mimetype) {
-                        var builder = new BlobBuilder();
-                        builder.append(data);
-                        var blob = builder.getBlob(mimetype || "application/octet-stream");
-                        if (!name)
-                            name = "fleet.png";
-                        navigator.saveBlob(blob, name);
-                    };
-                    showSave(imgBlob, 'fleet.png', "image/png");
-                }
-            } else {
-                if ($('#export-image-container').length == 0)
-                    $('body').append('<a id="export-image-container" download="fleet.png">');
-                var img = self.Canvas().toDataURL("image/png");
+            if ($('#export-image-container').length == 0)
+                $('body').append('<a id="export-image-container" download="fleet.png">');
+            var img = self.Canvas().toDataURL("image/png");
 
-                $('#export-image-container').attr('href', img);
-                $('#export-image-container')[0].click();
-                $('#export-image-container').remove();
-            }
+            $('#export-image-container').attr('href', img);
+            $('#export-image-container')[0].click();
+            $('#export-image-container').remove();
 
         }
 
