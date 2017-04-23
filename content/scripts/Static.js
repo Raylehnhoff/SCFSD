@@ -26,6 +26,7 @@
         shipArray.push(new SCFSD.Ship("Blade"));
         shipArray.push(new SCFSD.Ship("Scythe"));
         shipArray.push(new SCFSD.Ship("Glaive"));
+        shipArray.push(new SCFSD.Ship("Defender"));
         shipArray.push(new SCFSD.Ship("Prowler"));
         shipArray.push(new SCFSD.Ship("Redeemer"));
         shipArray.push(new SCFSD.Ship("Terrapin"));
