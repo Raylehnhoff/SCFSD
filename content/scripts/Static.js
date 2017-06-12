@@ -19,7 +19,8 @@
         shipArray.push(new SCFSD.Ship("Buccaneer"));
         shipArray.push(new SCFSD.Ship("Hornet"));
         shipArray.push(new SCFSD.Ship("Gladiator"));
-		shipArray.push(new SCFSD.Ship("Hurricane"));
+        shipArray.push(new SCFSD.Ship("Eclipse"));
+        shipArray.push(new SCFSD.Ship("Hurricane"));
         shipArray.push(new SCFSD.Ship("Sabre"));
         shipArray.push(new SCFSD.Ship("Vanguard"));
         shipArray.push(new SCFSD.Ship("Khartu"));
