@@ -14,6 +14,7 @@
         shipArray.push(new SCFSD.Ship("M50"));
         shipArray.push(new SCFSD.Ship("Razor"));
         shipArray.push(new SCFSD.Ship("300 Series", "s300i"));
+        shipArray.push(new SCFSD.Ship("Nox"));
         shipArray.push(new SCFSD.Ship("Dragonfly"));
         shipArray.push(new SCFSD.Ship("Herald"));
         shipArray.push(new SCFSD.Ship("Buccaneer"));
