@@ -32,12 +32,12 @@
         shipArray.push(new SCFSD.Ship("Prowler"));
         shipArray.push(new SCFSD.Ship("Redeemer"));
         shipArray.push(new SCFSD.Ship("Terrapin"));
-        shipArray.push(new SCFSD.Ship("Cutlass"));
         shipArray.push(new SCFSD.Ship("Prospector"));
         shipArray.push(new SCFSD.Ship("Freelancer"));
+        shipArray.push(new SCFSD.Ship("Cutlass"));
         shipArray.push(new SCFSD.Ship("Constellation"));
-        shipArray.push(new SCFSD.Ship("Retaliator"));
         shipArray.push(new SCFSD.Ship("600i"));
+        shipArray.push(new SCFSD.Ship("Retaliator"));
         shipArray.push(new SCFSD.Ship("Caterpillar"));
         shipArray.push(new SCFSD.Ship("Hull A", "Hull-A"));
         shipArray.push(new SCFSD.Ship("Hull B", "Hull-B"));
