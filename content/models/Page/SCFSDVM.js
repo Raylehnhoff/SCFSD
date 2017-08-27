@@ -1,6 +1,7 @@
 /// <reference path="../../TypeDefs/knockout.d.ts"/>
 /// <reference path="../../TypeDefs/SCFSD.d.ts"/>
 /// <reference path="../../TypeDefs/html2canvas.d.ts"/>
+/// <reference path="../../thirdparty/linq/linq.d.ts"/>
 var Canvas2Image = Canvas2Image || {};
 var SCFSD;
 (function (SCFSD) {
@@ -33,6 +34,12 @@ var SCFSD;
             });
             this.OptionalSettings = new SCFSD.OptionalSettings();
             this.Canvas = ko.observable();
+            this.SpacefaringShips = ko.computed(function () {
+                return Enumerable.From(self.Ships()).Where(function (p) { return p.isSpaceFaring; }).ToArray();
+            });
+            this.NonSpacefaringShips = ko.computed(function () {
+                return Enumerable.From(self.Ships()).Where(function (p) { return !p.isSpaceFaring; }).ToArray();
+            });
         }
         PageVM.prototype.Reset = function () {
             var self = this;
@@ -126,6 +133,6 @@ var SCFSD;
         };
         PageVM.SVGCache = {};
         return PageVM;
-    })();
+    }());
     SCFSD.PageVM = PageVM;
 })(SCFSD || (SCFSD = {}));

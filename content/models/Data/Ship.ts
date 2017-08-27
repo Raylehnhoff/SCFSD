@@ -5,21 +5,23 @@ module SCFSD {
         className: string;
         shipCount: KnockoutObservable<number>;
         shipOutput: KnockoutComputed<ShipFragment[]>;
-        constructor(shipName: string, className?: string) {
+        isSpaceFaring: boolean;
+        constructor(shipName: string, isSpaceFaring?: boolean, className?: string) {
             this.shipName = shipName;
             if (!className) {
                 this.className = shipName;
             } else {
                 this.className = className;
             }
-            this.shipCount = ko.observable<number>().extend({notify:'always', rateLimit:1});
+            this.isSpaceFaring = isSpaceFaring;
+            this.shipCount = ko.observable<number>().extend({ notify: 'always', rateLimit: 1 });
             this.shipOutput = ko.computed(() => {
                 var fragments = new Array<ShipFragment>();
                 for (var i = 0; i < this.shipCount(); i++) {
                     fragments.push(new ShipFragment(this.shipName, this.className));
                 }
                 return fragments;
-            }).extend({notify:'always'});
+            }).extend({ notify: 'always' });
 
             this.shipCount.subscribe((newValue) => {
                 ko.postbox.publish("SaveShips", this);

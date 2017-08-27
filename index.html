@@ -15,6 +15,7 @@
     <script type="text/javascript" src="content/ThirdParty/canvas2image.js"></script>
     <script type="text/javascript" src="content/ThirdParty/Modernizr.js"></script>
     <script type="text/javascript" src="content/ThirdParty/Knockout/knockout-3.3.0.js"></script>
+    <script type="text/javascript" src="content/ThirdParty/linq.js"></script>
     <script type="text/javascript" src="content/scripts/site.js"></script>
     <script type="text/javascript" src="content/ThirdParty/knockout-postbox.js"></script>
     <script type="text/javascript" src="content/models/Data/OptionalSettings.js"></script>
@@ -53,8 +54,6 @@
             document.onscroll = scroll;
 
         });
-
-        
     </script>
 </head>
 <body id="Top">
@@ -89,22 +88,34 @@
                                 <i class="glyphicon glyphicon-download-alt"></i> Download
                             </a>
                         </li>
-						<li data-bind="visible:HasAnyShips">
-							<a href="#" data-bind="click:Reset">
-								<i class="glyphicon glyphicon-refresh"></i> Reset
-							</a>
-						</li>
+                        <li data-bind="visible:HasAnyShips">
+                            <a href="#" data-bind="click:Reset">
+                                <i class="glyphicon glyphicon-refresh"></i> Reset
+                            </a>
+                        </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="panelSetup">
                             <div class="col-xs-2" id="shipPanel">
                                 <form>
-                                    <div data-bind="foreach:Ships">
+                                    <h3>Spacefaring Ships</h3>
+                                    <div data-bind="foreach:SpacefaringShips">
                                         <div class="form-group ship-input-container">
-											<label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
-											<div class="col-xs-7">
-												<input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
-											</div>
+                                            <label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
+                                            <div class="col-xs-7">
+                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form>
+                                    <h3>Non-Spacefaring Ships</h3>
+                                    <div data-bind="foreach:NonSpacefaringShips">
+                                        <div class="form-group ship-input-container">
+                                            <label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
+                                            <div class="col-xs-7">
+                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
@@ -115,7 +126,24 @@
                                     <div id="holder"></div>
                                 </div>
                                 <table id="ShipOutput">
-                                    <tbody data-bind="foreach:Ships">
+                                    <tbody data-bind="foreach:SpacefaringShips">
+                                    <!-- ko if: shipCount() > 0-->
+                                    <tr class="ShipBox" data-bind="attr:{'id':className}">
+                                        <td class="ShipName">
+                                            <span data-bind="text:shipName"></span>
+                                            <!-- ko if: $parent.OptionalSettings.ShowShipCount() -->
+                                            <br /><span data-bind="text:'(' + shipCount() +')'"></span>
+                                            <!-- /ko -->
+                                        </td>
+                                        <td class="ShipContainer" data-bind="attr:{id:'container-'+className}">
+                                            <!-- ko foreach: shipOutput -->
+                                            <img class="Ship svg" data-bind="attr:{src:'assets/ships/'+className+'.svg'}" />
+                                            <!-- /ko-->
+                                        </td>
+                                    </tr>
+                                    <!-- /ko -->
+                                    </tbody>
+                                    <tbody data-bind="foreach:NonSpacefaringShips">
                                         <!-- ko if: shipCount() > 0-->
                                         <tr class="ShipBox" data-bind="attr:{'id':className}">
                                             <td class="ShipName">
@@ -129,13 +157,11 @@
                                                 <img class="Ship svg" data-bind="attr:{src:'assets/ships/'+className+'.svg'}" />
                                                 <!-- /ko-->
                                             </td>
-
                                         </tr>
                                         <!-- /ko -->
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
 
                         <div class="tab-pane" id="panelOptional">

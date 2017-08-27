@@ -2,7 +2,7 @@
 var SCFSD;
 (function (SCFSD) {
     var Ship = (function () {
-        function Ship(shipName, className) {
+        function Ship(shipName, isSpaceFaring, className) {
             var _this = this;
             this.shipName = shipName;
             if (!className) {
@@ -11,6 +11,7 @@ var SCFSD;
             else {
                 this.className = className;
             }
+            this.isSpaceFaring = isSpaceFaring;
             this.shipCount = ko.observable().extend({ notify: 'always', rateLimit: 1 });
             this.shipOutput = ko.computed(function () {
                 var fragments = new Array();
@@ -24,7 +25,7 @@ var SCFSD;
             });
         }
         return Ship;
-    })();
+    }());
     SCFSD.Ship = Ship;
     var ShipFragment = (function () {
         function ShipFragment(shipName, className) {
@@ -32,6 +33,6 @@ var SCFSD;
             this.className = className;
         }
         return ShipFragment;
-    })();
+    }());
     SCFSD.ShipFragment = ShipFragment;
 })(SCFSD || (SCFSD = {}));

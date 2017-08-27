@@ -3170,6 +3170,7 @@ interface JQuery {
      * @param callback The new function to add to the queue, with a function to call that will dequeue the next item.
      */
     queue(queueName: string, callback: Function): JQuery;
+    tab(show: string);
 }
 declare module "jquery" {
     export = $;
