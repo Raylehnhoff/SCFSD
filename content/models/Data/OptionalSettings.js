@@ -38,7 +38,7 @@ var SCFSD;
             });
         }
         return OptionalSettings;
-    })();
+    }());
     SCFSD.OptionalSettings = OptionalSettings;
     var Option = (function () {
         function Option(text, value) {
@@ -46,6 +46,6 @@ var SCFSD;
             this.Value = value;
         }
         return Option;
-    })();
+    }());
     SCFSD.Option = Option;
 })(SCFSD || (SCFSD = {}));

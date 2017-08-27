@@ -1,13 +1,16 @@
 ﻿/// <reference path="../../TypeDefs/knockout.d.ts"/>
 /// <reference path="../../TypeDefs/SCFSD.d.ts"/>
 /// <reference path="../../TypeDefs/html2canvas.d.ts"/>
+/// <reference path="../../thirdparty/linq/linq.d.ts"/>
 var Canvas2Image = Canvas2Image || {};
 module SCFSD {
     export class PageVM {
         Ships: KnockoutObservableArray<Ship>;
+        SpacefaringShips: KnockoutComputed<Array<Ship>>;
+        NonSpacefaringShips: KnockoutComputed<Array<Ship>>;
         HasAnyShips: KnockoutComputed<boolean>;
         OptionalSettings: OptionalSettings;
-        ShipTimeout: number;
+        ShipTimeout: any;
         Canvas: KnockoutObservable<any>;
         IsDownloadReady: KnockoutObservable<boolean>;
         static SVGCache = {};
@@ -42,6 +45,13 @@ module SCFSD {
 
             this.OptionalSettings = new OptionalSettings();
             this.Canvas = ko.observable<any>();
+            this.SpacefaringShips = ko.computed(() => {
+                return Enumerable.From(self.Ships()).Where((p) => p.isSpaceFaring).ToArray();
+            });
+
+            this.NonSpacefaringShips = ko.computed(() => {
+                return Enumerable.From(self.Ships()).Where((p) => !p.isSpaceFaring).ToArray();
+            });
         }
 
         Reset() {
@@ -92,7 +102,6 @@ module SCFSD {
             $('#export-image-container').attr('href', img);
             $('#export-image-container')[0].click();
             $('#export-image-container').remove();
-
         }
 
         SaveImageClick() {
@@ -124,7 +133,6 @@ module SCFSD {
                         SCFSD.PageVM.SVGCache[imgURL] = $svg;
                         // Replace image with new SVG
                         $img.replaceWith($svg);
-
                     }, 'xml');
                 } else {
                     $img.replaceWith($(cache).clone());
@@ -136,7 +144,6 @@ module SCFSD {
             var self = this;
             this.Ships(SCFSD.Static.loadShips());
             this.checkLocalStorage();
-
         }
 
         checkLocalStorage() {
@@ -148,6 +155,4 @@ module SCFSD {
             }
         }
     }
-
-
 }
