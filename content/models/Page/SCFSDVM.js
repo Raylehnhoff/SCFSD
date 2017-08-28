@@ -10,6 +10,7 @@ var SCFSD;
             var self = this;
             this.ShipTimeout = 0;
             this.Ships = ko.observableArray([]);
+            this.OrderBySize = ko.observable("Size");
             this.init();
             this.HasAnyShips = ko.computed(function () {
                 return ko.utils.arrayFilter(self.Ships(), function (elem) {
@@ -35,10 +36,14 @@ var SCFSD;
             this.OptionalSettings = new SCFSD.OptionalSettings();
             this.Canvas = ko.observable();
             this.SpacefaringShips = ko.computed(function () {
-                return Enumerable.From(self.Ships()).Where(function (p) { return p.isSpaceFaring; }).OrderBy(function (p) { return p.area(); }).ToArray();
+                return Enumerable.From(self.Ships()).Where(function (p) { return p.isSpaceFaring; }).OrderBy(function (p) {
+                    return self.OrderBySize() == "Size" ? p.area() : p.shipName;
+                }).ToArray();
             });
             this.NonSpacefaringShips = ko.computed(function () {
-                return Enumerable.From(self.Ships()).Where(function (p) { return !p.isSpaceFaring; }).OrderBy(function (p) { return p.area(); }).ToArray();
+                return Enumerable.From(self.Ships()).Where(function (p) { return !p.isSpaceFaring; }).OrderBy(function (p) {
+                    return self.OrderBySize() == "Size" ? p.area() : p.shipName;
+                }).ToArray();
             });
         }
         PageVM.prototype.Reset = function () {

@@ -13,12 +13,14 @@ module SCFSD {
         ShipTimeout: any;
         Canvas: KnockoutObservable<any>;
         IsDownloadReady: KnockoutObservable<boolean>;
+        OrderBySize:KnockoutObservable<string>;
         static SVGCache = {};
 
         constructor() {
             var self = this;
             this.ShipTimeout = 0;
             this.Ships = ko.observableArray([]);
+            this.OrderBySize = ko.observable("Size");
             this.init();
             this.HasAnyShips = ko.computed(() => {
                 return ko.utils.arrayFilter(self.Ships(), (elem: Ship) => {
@@ -46,11 +48,15 @@ module SCFSD {
             this.OptionalSettings = new OptionalSettings();
             this.Canvas = ko.observable<any>();
             this.SpacefaringShips = ko.computed(() => {
-                return Enumerable.From(self.Ships()).Where((p) => p.isSpaceFaring).OrderBy((p)=>p.area()).ToArray();
+                return Enumerable.From(self.Ships()).Where((p) => p.isSpaceFaring).OrderBy((p) => {
+                    return self.OrderBySize() == "Size"? p.area() : p.shipName;
+                }).ToArray();
             });
 
             this.NonSpacefaringShips = ko.computed(() => {
-                return Enumerable.From(self.Ships()).Where((p) => !p.isSpaceFaring).OrderBy((p)=>p.area()).ToArray();
+                return Enumerable.From(self.Ships()).Where((p) => !p.isSpaceFaring).OrderBy((p) => {
+                    return self.OrderBySize() == "Size" ? p.area() : p.shipName;
+                }).ToArray();
             });
         }
 

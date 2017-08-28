@@ -97,6 +97,15 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="panelSetup">
                             <div class="col-xs-2" id="shipPanel">
+                                Order by:
+                                <label>
+                                    Size
+                                    <input type="radio" name="order" value="Size" data-bind="checked:OrderBySize" />
+                                </label>
+                                <label>
+                                    Name
+                                    <input type="radio" name="order" value="Name" data-bind="checked:OrderBySize" />
+                                </label>
                                 <form>
                                     <h3>Spacefaring Ships</h3>
                                     <div data-bind="foreach:SpacefaringShips">
@@ -114,7 +123,7 @@
                                         <div class="form-group ship-input-container">
                                             <label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
                                             <div class="col-xs-7">
-                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
+                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount"/>
                                             </div>
                                         </div>
                                     </div>
