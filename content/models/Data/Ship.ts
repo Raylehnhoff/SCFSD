@@ -6,8 +6,13 @@ module SCFSD {
         shipCount: KnockoutObservable<number>;
         shipOutput: KnockoutComputed<ShipFragment[]>;
         isSpaceFaring: boolean;
+        width: KnockoutObservable<number>;
+        height: KnockoutObservable<number>;
+        area: KnockoutComputed<number>;
         constructor(shipName: string, isSpaceFaring?: boolean, className?: string) {
             this.shipName = shipName;
+            this.width = ko.observable(0);
+            this.height = ko.observable(0);
             if (!className) {
                 this.className = shipName;
             } else {
@@ -25,6 +30,10 @@ module SCFSD {
 
             this.shipCount.subscribe((newValue) => {
                 ko.postbox.publish("SaveShips", this);
+            });
+
+            this.area = ko.computed(() => {
+                return this.height() * this.width();
             });
         }
     }

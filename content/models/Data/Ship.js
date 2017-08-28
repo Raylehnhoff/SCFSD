@@ -5,6 +5,8 @@ var SCFSD;
         function Ship(shipName, isSpaceFaring, className) {
             var _this = this;
             this.shipName = shipName;
+            this.width = ko.observable(0);
+            this.height = ko.observable(0);
             if (!className) {
                 this.className = shipName;
             }
@@ -22,6 +24,9 @@ var SCFSD;
             }).extend({ notify: 'always' });
             this.shipCount.subscribe(function (newValue) {
                 ko.postbox.publish("SaveShips", _this);
+            });
+            this.area = ko.computed(function () {
+                return _this.height() * _this.width();
             });
         }
         return Ship;
