@@ -46,11 +46,11 @@ module SCFSD {
             this.OptionalSettings = new OptionalSettings();
             this.Canvas = ko.observable<any>();
             this.SpacefaringShips = ko.computed(() => {
-                return Enumerable.From(self.Ships()).Where((p) => p.isSpaceFaring).ToArray();
+                return Enumerable.From(self.Ships()).Where((p) => p.isSpaceFaring).OrderBy((p)=>p.area()).ToArray();
             });
 
             this.NonSpacefaringShips = ko.computed(() => {
-                return Enumerable.From(self.Ships()).Where((p) => !p.isSpaceFaring).ToArray();
+                return Enumerable.From(self.Ships()).Where((p) => !p.isSpaceFaring).OrderBy((p)=>p.area()).ToArray();
             });
         }
 
@@ -142,7 +142,16 @@ module SCFSD {
 
         init() {
             var self = this;
-            this.Ships(SCFSD.Static.loadShips());
+            ko.utils.arrayForEach(SCFSD.Static.loadShips(),
+                (ship: Ship) => {
+                    $.get(`assets/ships/${ship.className}.svg`,
+                        (data) => {
+                            var $svg = $($(data).find("svg"));
+                            ship.width(Math.floor($svg[0].width.baseVal.value));
+                            ship.height(Math.floor($svg[0].height.baseVal.value));
+                            self.Ships.push(ship);
+                        });
+                });
             this.checkLocalStorage();
         }
 

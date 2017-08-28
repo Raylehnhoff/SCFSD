@@ -35,10 +35,10 @@ var SCFSD;
             this.OptionalSettings = new SCFSD.OptionalSettings();
             this.Canvas = ko.observable();
             this.SpacefaringShips = ko.computed(function () {
-                return Enumerable.From(self.Ships()).Where(function (p) { return p.isSpaceFaring; }).ToArray();
+                return Enumerable.From(self.Ships()).Where(function (p) { return p.isSpaceFaring; }).OrderBy(function (p) { return p.area(); }).ToArray();
             });
             this.NonSpacefaringShips = ko.computed(function () {
-                return Enumerable.From(self.Ships()).Where(function (p) { return !p.isSpaceFaring; }).ToArray();
+                return Enumerable.From(self.Ships()).Where(function (p) { return !p.isSpaceFaring; }).OrderBy(function (p) { return p.area(); }).ToArray();
             });
         }
         PageVM.prototype.Reset = function () {
@@ -120,7 +120,14 @@ var SCFSD;
         };
         PageVM.prototype.init = function () {
             var self = this;
-            this.Ships(SCFSD.Static.loadShips());
+            ko.utils.arrayForEach(SCFSD.Static.loadShips(), function (ship) {
+                $.get("assets/ships/" + ship.className + ".svg", function (data) {
+                    var $svg = $($(data).find("svg"));
+                    ship.width(Math.floor($svg[0].width.baseVal.value));
+                    ship.height(Math.floor($svg[0].height.baseVal.value));
+                    self.Ships.push(ship);
+                });
+            });
             this.checkLocalStorage();
         };
         PageVM.prototype.checkLocalStorage = function () {
