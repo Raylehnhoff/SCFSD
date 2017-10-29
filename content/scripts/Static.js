@@ -24,6 +24,7 @@
         shipArray.push(new SCFSD.Ship("Eclipse", true));
         shipArray.push(new SCFSD.Ship("Hurricane", true));
         shipArray.push(new SCFSD.Ship("Sabre", true));
+        shipArray.push(new SCFSD.Ship("Sabre Raven", true, "Raven"));
         shipArray.push(new SCFSD.Ship("Vanguard", true));
         shipArray.push(new SCFSD.Ship("Khartu", true));
         shipArray.push(new SCFSD.Ship("Blade", true));
