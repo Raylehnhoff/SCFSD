@@ -51,6 +51,7 @@
         shipArray.push(new SCFSD.Ship("890 Jump", true, "Jump"));
         shipArray.push(new SCFSD.Ship("Merchantman", true));
         shipArray.push(new SCFSD.Ship("Carrack", true));
+        shipArray.push(new SCFSD.Ship("Pioneer", true));
         shipArray.push(new SCFSD.Ship("Endeavor", true));
         shipArray.push(new SCFSD.Ship("Reclaimer", true));
         shipArray.push(new SCFSD.Ship("Orion", true));
