@@ -1,29 +1,26 @@
-﻿/// <reference path="../../TypeDefs/knockout.d.ts"/>
-/// <reference path="../../TypeDefs/SCFSD.d.ts"/>
-/// <reference path="../../TypeDefs/html2canvas.d.ts"/>
-/// <reference path="../../thirdparty/linq/linq.d.ts"/>
+﻿/// <reference path="../../TypeDefs/SCFSD.d.ts"/>
 var Canvas2Image = Canvas2Image || {};
 module SCFSD {
     export class PageVM {
-        Ships: KnockoutObservableArray<Ship>;
-        SpacefaringShips: KnockoutComputed<Array<Ship>>;
-        NonSpacefaringShips: KnockoutComputed<Array<Ship>>;
+        AllShips: KnockoutObservableArray<Ship>;
+        Ships: KnockoutComputed<Array<Ship>>;
+        Vehicles: KnockoutComputed<Array<Ship>>;
         HasAnyShips: KnockoutComputed<boolean>;
         OptionalSettings: OptionalSettings;
         ShipTimeout: any;
         Canvas: KnockoutObservable<any>;
         IsDownloadReady: KnockoutObservable<boolean>;
-        OrderBySize:KnockoutObservable<string>;
+        OrderBySize: KnockoutObservable<string>;
         static SVGCache = {};
 
         constructor() {
             var self = this;
             this.ShipTimeout = 0;
-            this.Ships = ko.observableArray([]);
+            this.AllShips = ko.observableArray([]);
             this.OrderBySize = ko.observable("Size");
             this.init();
             this.HasAnyShips = ko.computed(() => {
-                return ko.utils.arrayFilter(self.Ships(), (elem: Ship) => {
+                return ko.utils.arrayFilter(self.AllShips(), (elem: Ship) => {
                     return elem.shipCount() > 0;
                 }).length > 0;
             });
@@ -47,14 +44,14 @@ module SCFSD {
 
             this.OptionalSettings = new OptionalSettings();
             this.Canvas = ko.observable<any>();
-            this.SpacefaringShips = ko.computed(() => {
-                return Enumerable.From(self.Ships()).Where((p) => p.isSpaceFaring).OrderBy((p) => {
-                    return self.OrderBySize() == "Size"? p.area() : p.shipName;
+            this.Ships = ko.computed(() => {
+                return Enumerable.From(self.AllShips()).Where((p) => p.isSpaceFaring).OrderBy((p) => {
+                    return self.OrderBySize() == "Size" ? p.area() : p.shipName;
                 }).ToArray();
             });
 
-            this.NonSpacefaringShips = ko.computed(() => {
-                return Enumerable.From(self.Ships()).Where((p) => !p.isSpaceFaring).OrderBy((p) => {
+            this.Vehicles = ko.computed(() => {
+                return Enumerable.From(self.AllShips()).Where((p) => !p.isSpaceFaring).OrderBy((p) => {
                     return self.OrderBySize() == "Size" ? p.area() : p.shipName;
                 }).ToArray();
             });
@@ -62,8 +59,8 @@ module SCFSD {
 
         Reset() {
             var self = this;
-            for (var i = 0; i < self.Ships().length; i++) {
-                var ship = self.Ships()[i];
+            for (var i = 0; i < self.AllShips().length; i++) {
+                var ship = self.AllShips()[i];
                 ship.shipCount(null);
                 self.SaveToLocalStorage(ship);
             }
@@ -88,7 +85,7 @@ module SCFSD {
                     var elem = $('#ShipOutput')[0];
                     html2canvas(elem, {
                         useCORS: true
-                    }).then(function (canvas) {
+                    }).then(canvas => {
                         self.Canvas(canvas);
                         self.IsDownloadReady(true);
                         if (saveAfterRedraw) {
@@ -152,20 +149,20 @@ module SCFSD {
                 (ship: Ship) => {
                     $.get(`assets/ships/${ship.className}.svg`,
                         (data) => {
-                            var $svg = $($(data).find("svg"));
+                            var $svg: any = $($(data).find("svg"));
                             ship.width(Math.floor($svg[0].width.baseVal.value));
                             ship.height(Math.floor($svg[0].height.baseVal.value));
-                            self.Ships.push(ship);
+                            self.AllShips.push(ship);
                         });
                 });
             this.checkLocalStorage();
         }
 
         checkLocalStorage() {
-            for (var ship in this.Ships()) {
-                var shipName = this.Ships()[ship].className + "ShipNumber";
+            for (var ship in this.AllShips()) {
+                var shipName = this.AllShips()[ship].className + "ShipNumber";
                 if (localStorage[shipName]) {
-                    this.Ships()[ship].shipCount(localStorage[shipName]);
+                    this.AllShips()[ship].shipCount(localStorage[shipName]);
                 }
             }
         }

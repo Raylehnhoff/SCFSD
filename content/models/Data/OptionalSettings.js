@@ -1,6 +1,6 @@
 var SCFSD;
 (function (SCFSD) {
-    var OptionalSettings = (function () {
+    var OptionalSettings = /** @class */ (function () {
         function OptionalSettings() {
             var self = this;
             this.ShowShipCount = ko.observable(false);
@@ -40,7 +40,7 @@ var SCFSD;
         return OptionalSettings;
     }());
     SCFSD.OptionalSettings = OptionalSettings;
-    var Option = (function () {
+    var Option = /** @class */ (function () {
         function Option(text, value) {
             this.Text = text;
             this.Value = value;
@@ -49,3 +49,4 @@ var SCFSD;
     }());
     SCFSD.Option = Option;
 })(SCFSD || (SCFSD = {}));
+//# sourceMappingURL=OptionalSettings.js.map

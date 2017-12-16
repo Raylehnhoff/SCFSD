@@ -1,19 +1,16 @@
-/// <reference path="../../TypeDefs/knockout.d.ts"/>
 /// <reference path="../../TypeDefs/SCFSD.d.ts"/>
-/// <reference path="../../TypeDefs/html2canvas.d.ts"/>
-/// <reference path="../../thirdparty/linq/linq.d.ts"/>
 var Canvas2Image = Canvas2Image || {};
 var SCFSD;
 (function (SCFSD) {
-    var PageVM = (function () {
+    var PageVM = /** @class */ (function () {
         function PageVM() {
             var self = this;
             this.ShipTimeout = 0;
-            this.Ships = ko.observableArray([]);
+            this.AllShips = ko.observableArray([]);
             this.OrderBySize = ko.observable("Size");
             this.init();
             this.HasAnyShips = ko.computed(function () {
-                return ko.utils.arrayFilter(self.Ships(), function (elem) {
+                return ko.utils.arrayFilter(self.AllShips(), function (elem) {
                     return elem.shipCount() > 0;
                 }).length > 0;
             });
@@ -35,21 +32,21 @@ var SCFSD;
             });
             this.OptionalSettings = new SCFSD.OptionalSettings();
             this.Canvas = ko.observable();
-            this.SpacefaringShips = ko.computed(function () {
-                return Enumerable.From(self.Ships()).Where(function (p) { return p.isSpaceFaring; }).OrderBy(function (p) {
+            this.Ships = ko.computed(function () {
+                return Enumerable.From(self.AllShips()).Where(function (p) { return p.isSpaceFaring; }).OrderBy(function (p) {
                     return self.OrderBySize() == "Size" ? p.area() : p.shipName;
                 }).ToArray();
             });
-            this.NonSpacefaringShips = ko.computed(function () {
-                return Enumerable.From(self.Ships()).Where(function (p) { return !p.isSpaceFaring; }).OrderBy(function (p) {
+            this.Vehicles = ko.computed(function () {
+                return Enumerable.From(self.AllShips()).Where(function (p) { return !p.isSpaceFaring; }).OrderBy(function (p) {
                     return self.OrderBySize() == "Size" ? p.area() : p.shipName;
                 }).ToArray();
             });
         }
         PageVM.prototype.Reset = function () {
             var self = this;
-            for (var i = 0; i < self.Ships().length; i++) {
-                var ship = self.Ships()[i];
+            for (var i = 0; i < self.AllShips().length; i++) {
+                var ship = self.AllShips()[i];
                 ship.shipCount(null);
                 self.SaveToLocalStorage(ship);
             }
@@ -130,16 +127,16 @@ var SCFSD;
                     var $svg = $($(data).find("svg"));
                     ship.width(Math.floor($svg[0].width.baseVal.value));
                     ship.height(Math.floor($svg[0].height.baseVal.value));
-                    self.Ships.push(ship);
+                    self.AllShips.push(ship);
                 });
             });
             this.checkLocalStorage();
         };
         PageVM.prototype.checkLocalStorage = function () {
-            for (var ship in this.Ships()) {
-                var shipName = this.Ships()[ship].className + "ShipNumber";
+            for (var ship in this.AllShips()) {
+                var shipName = this.AllShips()[ship].className + "ShipNumber";
                 if (localStorage[shipName]) {
-                    this.Ships()[ship].shipCount(localStorage[shipName]);
+                    this.AllShips()[ship].shipCount(localStorage[shipName]);
                 }
             }
         };
@@ -148,3 +145,4 @@ var SCFSD;
     }());
     SCFSD.PageVM = PageVM;
 })(SCFSD || (SCFSD = {}));
+//# sourceMappingURL=SCFSDVM.js.map

@@ -1,7 +1,7 @@
 /// <reference path="../../TypeDefs/knockout.postbox.d.ts"/>
 var SCFSD;
 (function (SCFSD) {
-    var Ship = (function () {
+    var Ship = /** @class */ (function () {
         function Ship(shipName, isSpaceFaring, className) {
             var _this = this;
             this.shipName = shipName;
@@ -32,7 +32,7 @@ var SCFSD;
         return Ship;
     }());
     SCFSD.Ship = Ship;
-    var ShipFragment = (function () {
+    var ShipFragment = /** @class */ (function () {
         function ShipFragment(shipName, className) {
             this.shipName = shipName;
             this.className = className;
@@ -41,3 +41,4 @@ var SCFSD;
     }());
     SCFSD.ShipFragment = ShipFragment;
 })(SCFSD || (SCFSD = {}));
+//# sourceMappingURL=Ship.js.map
