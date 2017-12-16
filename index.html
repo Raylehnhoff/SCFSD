@@ -107,23 +107,23 @@
                                     <input type="radio" name="order" value="Name" data-bind="checked:OrderBySize" />
                                 </label>
                                 <form>
-                                    <h3>Spacefaring Ships</h3>
-                                    <div data-bind="foreach:SpacefaringShips">
+                                    <h3>Ships</h3>
+                                    <div data-bind="foreach:Ships">
                                         <div class="form-group ship-input-container">
                                             <label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
                                             <div class="col-xs-7">
-                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount"/>
+                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
                                             </div>
                                         </div>
                                     </div>
                                 </form>
                                 <form>
-                                    <h3>Non-Spacefaring Ships</h3>
-                                    <div data-bind="foreach:NonSpacefaringShips">
+                                    <h3>Vehicles</h3>
+                                    <div data-bind="foreach:Vehicles">
                                         <div class="form-group ship-input-container">
                                             <label class="col-xs-5" data-bind="attr:{'for':className + 'ShipNumber'}, text:shipName"></label>
                                             <div class="col-xs-7">
-                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount"/>
+                                                <input type="number" class="form-control" data-bind="attr:{'id':className + 'ShipNumber'}, value:shipCount" />
                                             </div>
                                         </div>
                                     </div>
@@ -135,24 +135,24 @@
                                     <div id="holder"></div>
                                 </div>
                                 <table id="ShipOutput">
-                                    <tbody data-bind="foreach:SpacefaringShips">
-                                    <!-- ko if: shipCount() > 0-->
-                                    <tr class="ShipBox" data-bind="attr:{'id':className}">
-                                        <td class="ShipName">
-                                            <span data-bind="text:shipName"></span>
-                                            <!-- ko if: $parent.OptionalSettings.ShowShipCount() -->
-                                            <br /><span data-bind="text:'(' + shipCount() +')'"></span>
-                                            <!-- /ko -->
-                                        </td>
-                                        <td class="ShipContainer" data-bind="attr:{id:'container-'+className}">
-                                            <!-- ko foreach: shipOutput -->
-                                            <img class="Ship svg" data-bind="attr:{src:'assets/ships/'+className+'.svg'}" />
-                                            <!-- /ko-->
-                                        </td>
-                                    </tr>
-                                    <!-- /ko -->
+                                    <tbody data-bind="foreach:Ships">
+                                        <!-- ko if: shipCount() > 0-->
+                                        <tr class="ShipBox" data-bind="attr:{'id':className}">
+                                            <td class="ShipName">
+                                                <span data-bind="text:shipName"></span>
+                                                <!-- ko if: $parent.OptionalSettings.ShowShipCount() -->
+                                                <br /><span data-bind="text:'(' + shipCount() +')'"></span>
+                                                <!-- /ko -->
+                                            </td>
+                                            <td class="ShipContainer" data-bind="attr:{id:'container-'+className}">
+                                                <!-- ko foreach: shipOutput -->
+                                                <img class="Ship svg" data-bind="attr:{src:'assets/ships/'+className+'.svg'}" />
+                                                <!-- /ko-->
+                                            </td>
+                                        </tr>
+                                        <!-- /ko -->
                                     </tbody>
-                                    <tbody data-bind="foreach:NonSpacefaringShips">
+                                    <tbody data-bind="foreach:Vehicles">
                                         <!-- ko if: shipCount() > 0-->
                                         <tr class="ShipBox" data-bind="attr:{'id':className}">
                                             <td class="ShipName">
