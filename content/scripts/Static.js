@@ -7,6 +7,7 @@
         shipArray.push(new SCFSD.Ship("Nox", false));
         shipArray.push(new SCFSD.Ship("Dragonfly", false));
         shipArray.push(new SCFSD.Ship("Cyclone", false));
+        shipArray.push(new SCFSD.Ship("Nova", false));
         shipArray.push(new SCFSD.Ship("Argo", true));
         shipArray.push(new SCFSD.Ship("Razor", true));
         shipArray.push(new SCFSD.Ship("M50", true));
