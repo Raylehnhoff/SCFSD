@@ -42,6 +42,7 @@
         shipArray.push(new SCFSD.Ship("Redeemer", true));
         shipArray.push(new SCFSD.Ship("Vanguard", true));
         shipArray.push(new SCFSD.Ship("Freelancer", true));
+        shipArray.push(new SCFSD.Ship("Vulcan", true));
         shipArray.push(new SCFSD.Ship("Hull B", true, "Hull-B"));
         shipArray.push(new SCFSD.Ship("Constellation", true));
         shipArray.push(new SCFSD.Ship("Retaliator", true));
