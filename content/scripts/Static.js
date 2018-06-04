@@ -15,6 +15,7 @@
         shipArray.push(new SCFSD.Ship("Merlin", true));
         shipArray.push(new SCFSD.Ship("85X", true));
         shipArray.push(new SCFSD.Ship("Reliant", true));
+        shipArray.push(new SCFSD.Ship("100 Series", true, "100i"));
         shipArray.push(new SCFSD.Ship("Buccaneer", true));
         shipArray.push(new SCFSD.Ship("Blade", true));
         shipArray.push(new SCFSD.Ship("Hawk", true));
@@ -49,9 +50,10 @@
         shipArray.push(new SCFSD.Ship("Genesis", true));
         shipArray.push(new SCFSD.Ship("Crucible", true));
         shipArray.push(new SCFSD.Ship("600i", true));
-        shipArray.push(new SCFSD.Ship("Hammerhead", true));
+        shipArray.push(new SCFSD.Ship("Hercules", true));
         shipArray.push(new SCFSD.Ship("Starfarer", true));
         shipArray.push(new SCFSD.Ship("Caterpillar", true));
+        shipArray.push(new SCFSD.Ship("Hammerhead", true));
         shipArray.push(new SCFSD.Ship("Carrack", true));
         shipArray.push(new SCFSD.Ship("890 Jump", true, "Jump"));
         shipArray.push(new SCFSD.Ship("Hull C", true, "Hull-C"));
