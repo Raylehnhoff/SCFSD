@@ -42,6 +42,7 @@
         shipArray.push(new SCFSD.Ship("Vulture", true));
         shipArray.push(new SCFSD.Ship("Prowler", true));
         shipArray.push(new SCFSD.Ship("Redeemer", true));
+        shipArray.push(new SCFSD.Ship("Valkyrie", true));
         shipArray.push(new SCFSD.Ship("Vanguard", true));
         shipArray.push(new SCFSD.Ship("Freelancer", true));
         shipArray.push(new SCFSD.Ship("Vulcan", true));
@@ -68,6 +69,7 @@
         shipArray.push(new SCFSD.Ship("Endeavor", true));
         shipArray.push(new SCFSD.Ship("Hull D", true, "Hull-D"));
         shipArray.push(new SCFSD.Ship("Idris", true));
+        shipArray.push(new SCFSD.Ship("Kraken", true));
         shipArray.push(new SCFSD.Ship("Hull E", true, "Hull-E"));
         shipArray.push(new SCFSD.Ship("Javelin", true));
         return shipArray;
