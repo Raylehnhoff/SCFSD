@@ -33,6 +33,7 @@
         shipArray.push(new SCFSD.Ship("Hornet", true));
         shipArray.push(new SCFSD.Ship("Herald", true));
         shipArray.push(new SCFSD.Ship("300 Series", true, "s300i"));
+        shipArray.push(new SCFSD.Ship("F8 Lightning", true, "Lightning"));
         shipArray.push(new SCFSD.Ship("Sabre", true));
         shipArray.push(new SCFSD.Ship("Sabre Raven", true, "Raven"));
         shipArray.push(new SCFSD.Ship("Prospector", true));
