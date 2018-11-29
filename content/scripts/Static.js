@@ -22,6 +22,7 @@
         shipArray.push(new SCFSD.Ship("Hawk", true));
         shipArray.push(new SCFSD.Ship("Mustang", true));
         shipArray.push(new SCFSD.Ship("Avenger", true));
+        shipArray.push(new SCFSD.Ship("San'Tok Yai", true, "Santok"));
         shipArray.push(new SCFSD.Ship("Aurora", true));
         shipArray.push(new SCFSD.Ship("Terrapin", true));
         shipArray.push(new SCFSD.Ship("Gladius", true));
