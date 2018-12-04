@@ -7,6 +7,7 @@
         shipArray.push(new SCFSD.Ship("Nox", false));
         shipArray.push(new SCFSD.Ship("Dragonfly", false));
         shipArray.push(new SCFSD.Ship("Cyclone", false));
+        shipArray.push(new SCFSD.Ship("Ursa", false));
         shipArray.push(new SCFSD.Ship("Nova", false));
         shipArray.push(new SCFSD.Ship("Argo", true));
         shipArray.push(new SCFSD.Ship("Razor", true));
@@ -17,10 +18,12 @@
         shipArray.push(new SCFSD.Ship("Reliant", true));
         shipArray.push(new SCFSD.Ship("100 Series", true, "100i"));
         shipArray.push(new SCFSD.Ship("Buccaneer", true));
+        shipArray.push(new SCFSD.Ship("Arrow", true));
         shipArray.push(new SCFSD.Ship("Blade", true));
         shipArray.push(new SCFSD.Ship("Hawk", true));
         shipArray.push(new SCFSD.Ship("Mustang", true));
         shipArray.push(new SCFSD.Ship("Avenger", true));
+        shipArray.push(new SCFSD.Ship("San'Tok Yai", true, "Santok"));
         shipArray.push(new SCFSD.Ship("Aurora", true));
         shipArray.push(new SCFSD.Ship("Terrapin", true));
         shipArray.push(new SCFSD.Ship("Gladius", true));
@@ -31,6 +34,7 @@
         shipArray.push(new SCFSD.Ship("Hornet", true));
         shipArray.push(new SCFSD.Ship("Herald", true));
         shipArray.push(new SCFSD.Ship("300 Series", true, "s300i"));
+        shipArray.push(new SCFSD.Ship("F8 Lightning", true, "Lightning"));
         shipArray.push(new SCFSD.Ship("Sabre", true));
         shipArray.push(new SCFSD.Ship("Sabre Raven", true, "Raven"));
         shipArray.push(new SCFSD.Ship("Prospector", true));
