@@ -9,7 +9,7 @@
         shipArray.push(new SCFSD.Ship("Cyclone", false));
         shipArray.push(new SCFSD.Ship("Ursa", false));
         shipArray.push(new SCFSD.Ship("Nova", false));
-        shipArray.push(new SCFSD.Ship("Argo", true));
+        shipArray.push(new SCFSD.Ship("ARGO Cargo", true, "Argo"));
         shipArray.push(new SCFSD.Ship("Razor", true));
         shipArray.push(new SCFSD.Ship("M50", true));
         shipArray.push(new SCFSD.Ship("Archimedes", true));
@@ -38,6 +38,7 @@
         shipArray.push(new SCFSD.Ship("Sabre", true));
         shipArray.push(new SCFSD.Ship("Sabre Raven", true, "Raven"));
         shipArray.push(new SCFSD.Ship("Prospector", true));
+        shipArray.push(new SCFSD.Ship("ARGO SRV", true, "ARGOSRV"));
         shipArray.push(new SCFSD.Ship("Cutlass", true));
         shipArray.push(new SCFSD.Ship("Khartu", true));
         shipArray.push(new SCFSD.Ship("Scythe", true));
